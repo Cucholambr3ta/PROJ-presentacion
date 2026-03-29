@@ -6,52 +6,69 @@ import { motion } from 'framer-motion';
 
 const NavigationGrid = () => {
   return (
-    <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-12 px-8 pt-16 pb-32 max-w-5xl mx-auto w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-8 pt-20 pb-40 max-w-6xl mx-auto w-full z-20">
+      {/* Opción 1: Mockups */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.05 }}
-        className="flex-1"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative group"
       >
         <Link 
           href="/mockups"
-          className="group block relative p-[1px] rounded-2xl bg-gradient-to-br from-[#DAA520]/40 to-transparent transition-all duration-500 hover:from-[#DAA520]/60"
+          className="block relative p-[2px] rounded-3xl bg-gradient-to-b from-[#DAA520]/60 to-transparent transition-all duration-700 hover:from-[#DAA520]"
         >
-          <div className="relative glass-gold rounded-2xl p-12 flex flex-col items-center space-y-6 overflow-hidden min-h-[320px] justify-center">
-            {/* Inner Glow */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#DAA520]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="relative glass-gold rounded-[22px] p-12 flex flex-col items-center text-center space-y-8 min-h-[400px] justify-center overflow-hidden">
+            {/* Background Glow Effect */}
+            <div className="absolute inset-0 bg-radial-gradient from-[#DAA520]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
             
-            <span className="text-xs font-black tracking-[0.5em] uppercase text-[#DAA520]">Experiencia</span>
-            <div className="flex flex-col items-center space-y-2">
-              <h3 className="text-4xl font-bold text-white tracking-tight">Explorar Mockups</h3>
-              <div className="w-12 h-[1px] bg-[#DAA520]/30 group-hover:w-24 transition-all duration-700" />
+            <span className="text-xs font-black tracking-[0.5em] text-[#DAA520] uppercase bg-[#DAA520]/10 px-4 py-2 rounded-full">Prototipos</span>
+            
+            <div className="space-y-4">
+              <h3 className="text-4xl font-bold text-white tracking-tight group-hover:scale-105 transition-transform duration-500">Explorar Mockups</h3>
+              <p className="text-gray-400 text-lg font-light leading-relaxed max-w-[320px]">
+                Inmersión visual en la interfaz de Menu Bytes. Diseños interactivos de alta fidelidad.
+              </p>
             </div>
-            <p className="text-center text-gray-400 text-base font-light max-w-[280px]">Prototipos interactivos de alta fidelidad para el sistema Menu Bytes.</p>
+
+            <div className="pt-4">
+              <div className="px-8 py-3 bg-white/5 border border-white/10 rounded-full text-white text-sm font-bold tracking-widest group-hover:bg-[#DAA520] group-hover:text-black transition-all duration-500 uppercase">
+                Iniciar Demo
+              </div>
+            </div>
           </div>
         </Link>
       </motion.div>
 
+      {/* Opción 2: Presentación */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.05 }}
-        transition={{ delay: 0.1 }}
-        className="flex-1"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative group"
       >
         <Link 
           href="/presentacion"
-          className="group block relative p-[1px] rounded-2xl bg-gradient-to-br from-white/20 to-transparent transition-all duration-500 hover:from-white/30"
+          className="block relative p-[2px] rounded-3xl bg-gradient-to-b from-white/30 to-transparent transition-all duration-700 hover:from-white/60"
         >
-          <div className="relative glass rounded-2xl p-12 flex flex-col items-center space-y-6 overflow-hidden min-h-[320px] justify-center">
-            {/* Inner Glow */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="relative glass rounded-[22px] p-12 flex flex-col items-center text-center space-y-8 min-h-[400px] justify-center overflow-hidden">
+            {/* Background Glow Effect */}
+            <div className="absolute inset-0 bg-radial-gradient from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
             
-            <span className="text-xs font-black tracking-[0.5em] uppercase text-gray-500">Contenido</span>
-            <div className="flex flex-col items-center space-y-2">
-              <h3 className="text-4xl font-bold text-white tracking-tight">Ver Presentación</h3>
-              <div className="w-12 h-[1px] bg-white/10 group-hover:w-24 transition-all duration-700" />
+            <span className="text-xs font-black tracking-[0.5em] text-gray-500 uppercase bg-white/5 px-4 py-2 rounded-full">Académico</span>
+            
+            <div className="space-y-4">
+              <h3 className="text-4xl font-bold text-white tracking-tight group-hover:scale-105 transition-transform duration-500">Ver Presentación</h3>
+              <p className="text-gray-400 text-lg font-light leading-relaxed max-w-[320px]">
+                Arquitectura, defensa técnica y fundamentación del proyecto de grado.
+              </p>
             </div>
-            <p className="text-center text-gray-400 text-base font-light max-w-[280px]">Defensa de título, arquitectura técnica y casos de uso.</p>
+
+            <div className="pt-4">
+              <div className="px-8 py-3 bg-white/5 border border-white/10 rounded-full text-white text-sm font-bold tracking-widest group-hover:bg-white group-hover:text-black transition-all duration-500 uppercase">
+                Ver Contenido
+              </div>
+            </div>
           </div>
         </Link>
       </motion.div>
