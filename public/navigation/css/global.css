@@ -1,0 +1,194 @@
+:root {
+    /* OLYMP-IA v2.8.0 | OKLCH Color Engine */
+    --terra: oklch(53.07% 0.165 37.14);
+    --terra-dark: oklch(45% 0.15 37);
+    --terra-light: oklch(65% 0.12 37);
+    --olive: oklch(41.61% 0.101 126.33);
+    --olive-light: oklch(50% 0.08 126);
+    --clay: oklch(86.53% 0.051 84.42);
+    --clay-dark: oklch(80% 0.06 84);
+    --stone: oklch(27.8% 0 0);
+    --stone-light: oklch(96% 0.01 84);
+    --white: oklch(100% 0 0);
+    
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    
+    --shadow-rustic: 20px 20px 0px oklch(53.07% 0.165 37.14 / 0.1);
+    --shadow-soft: 0 4px 20px oklch(0% 0 0 / 0.05);
+    
+    /* Layout v2.8.0 */
+    --skeleton-bg: oklch(90% 0 0);
+    --skeleton-pulse: oklch(85% 0 0);
+}
+
+/* OKLCH Color Utilities */
+.bg-terra { background-color: var(--terra); }
+.text-terra { color: var(--terra); }
+.border-terra { border-color: var(--terra); }
+
+.bg-olive { background-color: var(--olive); }
+.text-olive { color: var(--olive); }
+
+.bg-clay { background-color: var(--clay); }
+
+/* Skeleton Loading (v2.8.0 Standard) */
+.skeleton {
+    background-color: var(--skeleton-bg);
+    background-image: linear-gradient(90deg, var(--skeleton-bg), var(--skeleton-pulse), var(--skeleton-bg));
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite linear;
+    border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+    background-color: var(--stone-light); 
+    color: var(--stone); 
+    font-family: var(--font-sans);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, .serif { font-family: var(--font-serif); }
+
+/* Layout Components */
+.sidebar {
+    width: 320px;
+    height: 100vh;
+    background: var(--white);
+    border-right: 2px solid var(--clay-dark);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.main-content {
+    margin-left: 320px;
+    padding: 64px;
+    min-height: 100vh;
+    background: var(--stone-light);
+}
+
+.card-rustic {
+    background: var(--white);
+    padding: 48px;
+    border-top: 8px solid var(--terra);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-rustic:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-rustic);
+}
+
+.btn-terra {
+    background: var(--terra);
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    font-size: 10px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-terra:hover {
+    background: var(--stone);
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 48px;
+    text-decoration: none;
+    color: var(--stone);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    border-bottom: 1px dashed rgba(47, 47, 47, 0.1);
+    transition: all 0.3s;
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+    background: var(--stone-light);
+    color: var(--terra);
+    border-left: 8px solid var(--terra);
+}
+
+/* Mobile Specifics */
+@media (max-width: 768px) {
+    .main-content { margin-left: 0; padding: 24px; }
+    .sidebar { display: none; }
+}
+
+/* Overlays & Modals (v2.8.1) */
+.overlay-login {
+    position: fixed;
+    inset: 0;
+    background: var(--stone);
+    background-image: url('https://www.transparenttextures.com/patterns/pinstriped-dark.png'), 
+                      linear-gradient(to bottom right, var(--terra-dark), var(--terra));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.login-card {
+    background: var(--white);
+    padding: 64px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.input-rustic {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid var(--clay-dark);
+    background: transparent;
+    font-family: var(--font-sans);
+    margin-bottom: 24px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-rustic:focus {
+    border-color: var(--terra);
+}
+
+/* Status Badges */
+.badge {
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.badge-available { background: var(--olive-light); color: var(--white); }
+.badge-occupied { background: var(--terra-light); color: var(--stone); }
+.badge-ready { background: var(--olive); color: var(--white); animation: pulse 2s infinite; }
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+.hidden { display: none !important; }

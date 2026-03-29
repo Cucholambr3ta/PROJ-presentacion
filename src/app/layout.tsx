@@ -1,21 +1,24 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import { Inter, Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
 
-export const metadata: Metadata = {
-  title: "Menu Bytes — Portal de Evaluación Elite",
-  description: "Portal premium para la defensa de título y exhibición de mockups del proyecto Menu Bytes.",
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata = {
+  title: "Portal Home",
+  description: "Proyecto Universitario",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="es">
-      <body className="antialiased overflow-x-hidden selection:bg-[#DAA520]/30 selection:text-[#DAA520]">
-        {children}
-      </body>
+    <html lang="es" className={cn("font-sans", geist.variable)}>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

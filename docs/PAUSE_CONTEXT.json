@@ -1,0 +1,14 @@
+{
+  "project_id": "PROJ-presentacion",
+  "phase": "Planificación y Preparación",
+  "status": "PAUSED",
+  "last_decision": "Mapear páginas .html a public/navigation/ e imágenes de tarjetas a la carpeta public/images/mockups/.",
+  "pending_tasks": [
+    "Ejecutar inicialización de shadcn/ui (npx shadcn@latest init -d).",
+    "Instalar dependencias base (button, carousel, lucide-react).",
+    "Instalar e inyectar componente Gallery4 desde 21st.dev.",
+    "Refactorizar mockups/page.tsx insertando Gallery4 y conectar con arreglos estáticos locales.",
+    "Mover directorio /navigation a /public/navigation para servir prototipos estáticos nativamente."
+  ],
+  "timestamp": "2026-03-29T21:31:00Z"
+}

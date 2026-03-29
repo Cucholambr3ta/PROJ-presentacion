@@ -1,8 +1,4 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import { OrganicBackground } from "../components/OrganicBackground";
 
 /* ── Icons ── */
 const EyeIcon = () => (
@@ -34,12 +30,63 @@ const LeafIcon = () => (
   </svg>
 );
 
+/* ── Floating blob background ── */
+function OrganicBackground() {
+  return (
+    <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
+      {/* Base warm gradient */}
+      <div style={{
+        position: "absolute", inset: 0,
+        background: "linear-gradient(160deg, #FDF3E3 0%, #FAE8CC 40%, #F5D9B0 100%)",
+      }} />
+
+      {/* Blob top-right — terracotta */}
+      <div style={{
+        position: "absolute", top: "-10%", right: "-8%",
+        width: "55vw", height: "55vw", maxWidth: 600, maxHeight: 600,
+        borderRadius: "60% 40% 70% 30% / 50% 60% 40% 50%",
+        background: "radial-gradient(circle, rgba(234,111,56,0.18) 0%, transparent 70%)",
+        animation: "blobA 14s ease-in-out infinite alternate",
+      }} />
+
+      {/* Blob bottom-left — amber */}
+      <div style={{
+        position: "absolute", bottom: "-15%", left: "-10%",
+        width: "50vw", height: "50vw", maxWidth: 520, maxHeight: 520,
+        borderRadius: "40% 60% 30% 70% / 60% 40% 60% 40%",
+        background: "radial-gradient(circle, rgba(255,193,7,0.2) 0%, transparent 70%)",
+        animation: "blobB 18s ease-in-out infinite alternate",
+      }} />
+
+      {/* Blob mid — warm rose */}
+      <div style={{
+        position: "absolute", top: "30%", left: "30%",
+        width: "40vw", height: "40vw", maxWidth: 400, maxHeight: 400,
+        borderRadius: "70% 30% 50% 50% / 40% 60% 40% 60%",
+        background: "radial-gradient(circle, rgba(210,120,60,0.08) 0%, transparent 70%)",
+        animation: "blobC 20s ease-in-out infinite alternate",
+      }} />
+
+      {/* Subtle grain texture */}
+      <div style={{
+        position: "absolute", inset: 0, opacity: 0.04,
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+      }} />
+
+      {/* Decorative wavy divider bottom */}
+      <svg style={{ position: "absolute", bottom: 0, left: 0, width: "100%", opacity: 0.08 }} viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="#A0522D" />
+      </svg>
+    </div>
+  );
+}
+
 /* ── Card ── */
 function Card({ title, description, icon: Icon, href, accent, tagLabel }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link
+    <a
       href={href}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -99,6 +146,7 @@ function Card({ title, description, icon: Icon, href, accent, tagLabel }) {
           border: `1px solid ${accent}30`,
           width: "fit-content",
         }}>
+          <LeafIcon style={{ color: accent, width: 12, height: 12 }} />
           <span style={{
             fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em",
             textTransform: "uppercase", color: accent,
@@ -173,17 +221,17 @@ function Card({ title, description, icon: Icon, href, accent, tagLabel }) {
         transition: "opacity 0.4s ease",
         pointerEvents: "none",
       }} />
-    </Link>
+    </a>
   );
 }
 
 /* ── Data ── */
-const cardsArray = [
+const cards = [
   {
     title: "Explorar Mockups",
     description: "Descubre nuestra colección de mockups de alta calidad para presentar tus platos y menús.",
     icon: EyeIcon,
-    href: "/mockups",
+    href: "#mockups",
     accent: "#C2440A",
     tagLabel: "Galería",
   },
@@ -198,9 +246,41 @@ const cardsArray = [
 ];
 
 /* ── Main ── */
-export default function Home() {
+export default function MenuBytes() {
   return (
     <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,800;1,9..144,700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+
+        @keyframes blobA {
+          0%   { transform: translate(0,0) scale(1)   rotate(0deg); }
+          100% { transform: translate(3%,4%) scale(1.08) rotate(8deg); }
+        }
+        @keyframes blobB {
+          0%   { transform: translate(0,0) scale(1)   rotate(0deg); }
+          100% { transform: translate(-3%,-3%) scale(1.06) rotate(-6deg); }
+        }
+        @keyframes blobC {
+          0%   { transform: translate(0,0) scale(1); }
+          100% { transform: translate(2%,-4%) scale(1.1); }
+        }
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        .fade-in  { animation: fadeIn  0.6s ease both; }
+        .fade-up  { animation: fadeUp  0.7s cubic-bezier(0.23,1,0.32,1) both; }
+        .delay-1  { animation-delay: 0.1s; }
+        .delay-2  { animation-delay: 0.25s; }
+        .delay-3  { animation-delay: 0.4s; }
+        .delay-4  { animation-delay: 0.55s; }
+      `}</style>
 
       <div style={{
         position: "relative", width: "100%", minHeight: "100vh",
@@ -231,6 +311,9 @@ export default function Home() {
               fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.12em",
               textTransform: "uppercase", fontFamily: "'DM Sans', sans-serif",
             }}>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+              </svg>
               Tu guía de sabores
             </div>
 
@@ -284,7 +367,7 @@ export default function Home() {
             gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))",
             gap: "1.25rem",
           }}>
-            {cardsArray.map((card, i) => (
+            {cards.map((card, i) => (
               <Card key={i} {...card} />
             ))}
           </div>
@@ -295,7 +378,7 @@ export default function Home() {
             fontSize: "0.75rem", color: "rgba(120,80,50,0.5)",
             letterSpacing: "0.06em", fontFamily: "'DM Sans', sans-serif",
           }}>
-            © 2025 Menu Bytes
+            © 2025 Menu Bytes · Hecho con ♥ y buen gusto
           </p>
         </div>
       </div>
