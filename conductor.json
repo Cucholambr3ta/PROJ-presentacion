@@ -1,17 +1,18 @@
 {
   "project": "PROJ-presentacion",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "lifecycle": {
-    "dev": "npm run dev",
-    "build": "npm run build",
-    "lint": "npm run lint",
-    "preview": "npm run preview",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "deploy": "vercel --prod",
-    "test": "npm test"
+    "analyze": "next build --debug"
   },
   "metadata": {
     "agent": "Zenith (00)",
-    "status": "In Development",
-    "platform": "Vercel"
+    "status": "In Refactor",
+    "platform": "Vercel / App Router",
+    "language": "TypeScript"
   }
 }

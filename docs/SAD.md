@@ -1,70 +1,69 @@
-# SAD: Software Architecture Document — PROJ-presentacion
+# SAD: Software Architecture Document — PROJ-presentacion Next.js
 
-**Proyecto**: Sitio de Presentación de Título Elite
-**Versión**: 1.0.0
+**Proyecto**: Portal de Evaluación Elite (Next.js Refactor)
+**Versión**: 2.0.0
 **Estado**: Basado en OLYMP-IA V2.3.0
 **Agente**: Zenith (00)
 
 ## 1. INTRODUCCIÓN
-Este documento describe el diseño arquitectónico de `PROJ-presentacion`, un sitio web premium destinado a la defensa académica del usuario. El enfoque principal es la excelencia visual y la robustez técnica mediante un diseño modular y reactivo.
+Este documento describe la arquitectura de `PROJ-presentacion`, refactorizada a **Next.js 14+** para proporcionar un portal robusto y performante. El sistema centraliza la navegación entre mockups interactivos y la presentación de defensa de título.
 
 ## 2. REPRESENTACIÓN DE LA ARQUITECTURA
-Se utiliza un patrón de **Single Page Application (SPA)** reactivo, orquestado con Vite para maximizar el desempeño en tiempo de desarrollo y ejecución. La arquitectura se adhiere a la separación estricta de componentes, hooks y estilos.
+Se utiliza el **App Router** de Next.js, aprovechando **React Server Components (RSC)** para la carga eficiente de contenido estático y **Client Components** para las animaciones complejas (Framer Motion). La orquestación se realiza mediante TypeScript para garantizar la integridad de los datos.
 
 ## 3. METAS Y RESTRICCIONES
-- **Wow Factor**: Impacto visual inmediato (60fps animations).
-- **Aislamiento**: Código desacoplado siguiendo principios SOLID.
-- **Plataforma**: Despliegue optimizado para Vercel.
-- **Tecnologías**: React 18, Framer Motion, Vanilla CSS.
+- **Wow Factor**: Animaciones de alto impacto visual.
+- **Aislamiento**: Uso de Clean Architecture en `/src` (components, hooks, lib).
+- **Framework**: Next.js (Turbo) para despliegue optimizado en Vercel.
+- **Tipado**: 100% de cobertura en interfaces de datos con TypeScript.
 
 ## 4. VISTA DE CASOS DE USO
-- **Visualización de Contenido**: El usuario (comisión) navega por las secciones del proyecto.
-- **Interacción Dinámica**: Animaciones de scroll y revelado de información.
-- **Adaptabilidad**: Visualización impecable en proyectores y dispositivos móviles.
+- **Interacción con Mockups**: El profesor navega por los archivos HTML embebidos.
+- **Presentación por Oradores**: Soporte para cambio de contexto entre 3 expositores.
+- **Resiliencia**: Navegación fluida y manejo de rutas no encontradas.
 
 ## 5. VISTA LÓGICA (C4)
-- **Componentes Core**: Navbar, Hero, AbstractSection, MetodologiaSection, ResultadosSection, Footer.
-- **Estado**: Gestión de estado local mediante React Hooks.
+- **Rutas**: Home, Mockups, Presentacion.
+- **Componentes**: UI (Tailwind CSS), Motion (Framer), Viewer (iFrame).
 
 ## 6. VISTA DE PROCESOS
-- **Carga Inicial**: Splash screen animado y precarga de assets críticos.
-- **Navegación**: Scroll-based navigation con detección de secciones activa.
+- **Pre-rendering**: Generación estática (SSG) de la página de inicio y navegación.
+- **Client Transitions**: Animaciones de entrada sincronizadas mediante el scroll del usuario.
 
 ## 7. VISTA DE DESPLIEGUE
-- **Host**: Vercel (Edge Network).
-- **Pipeline**: GitHub Actions -> Vercel Deploy.
-- **Variables**: `VITE_APP_STAGE` para entornos de producción.
+- **Plataforma**: Vercel.
+- **Integración**: GitHub Actions CI/CD.
+- **Assets**: Uso de la red de entrega de contenido (CDN) de Vercel.
 
 ## 8. VISTA DE IMPLEMENTACIÓN
 ```text
 PROJ-presentacion/
 ├── docs/ (SAD, PRD)
-├── public/ (Assets estáticos)
+├── public/ (Mockups HTML, Assets)
 ├── src/
-│   ├── components/ (UI Atoms & Molecules)
-│   ├── hooks/ (Lógica reusable)
-│   ├── styles/ (CSS Variables & Global)
-│   ├── assets/ (Imágenes & Iconos)
-│   └── App.jsx
-├── tests/ (Vitest/Playwright)
-└── scripts/ (Automatización)
+│   ├── app/ (Rutas y Layouts)
+│   ├── components/ (UI Molecules)
+│   ├── lib/ (Utilidades y Tipos)
+│   └── styles/ (Configuración Tailwind)
+├── tasks.yaml (Roadmap)
+└── CLAUDE.md (Guía de desarrollo)
 ```
 
 ## 9. VISTA DE DATOS
-- **Estructura**: Datos estáticos inyectados vía archivos JSON para facilitar la actualización post-génesis.
+- **Models**: Definición de interfaces para Secciones, Mockups y Diapositivas.
 
 ## 10. TAMAÑO Y DESEMPEÑO
-- **Bundle Size**: Minimización estricta de dependencias.
-- **Imágenes**: Optimización en formato WebP con dimensiones 2x.
+- **Optimization**: Uso de `next/image` y split dinámico de chunks de animación.
+- **Performance**: Optimización de iFrames mediante carga diferida (`loading="lazy"`).
 
 ## 11. CALIDAD
-- **Accesibilidad**: Cumplimiento WCAG 2.1 (Aria labels, contraste).
-- **Mantenibilidad**: Código autodocumentado y tipado (JSDoc).
+- **Tipado**: Eliminación de `any` en todo el proyecto.
+- **Lints**: Configuración estricta de ESLint para Next.js.
 
 ## 12. ADR (ARCHITECTURAL DECISION RECORDS)
-- **ADR-001**: Uso de Vanilla CSS vs Tailwind para control total de la estética premium.
-- **ADR-002**: Framer Motion como motor único de animaciones.
+- **ADR-003**: Migración a Next.js para mejorar el SEO (evaluación del link) y el despliegue en Vercel.
+- **ADR-004**: Uso de Tailwind CSS para agilizar la creación de componentes premium interactivos.
 
 ## 13. RTM (REQUIREMENTS TRACEABILITY MATRIX)
-- **R01 (Wow Factor)** -> Implementado en Hero y Transiciones.
-- **R02 (Responsive)** -> Layout flexible con Flexbox/Grid CSS.
+- **R03 (Portal Dual)** -> Implementado mediante App Router.
+- **R04 (Mockups HTML)** -> Integración en `/public` y visor dinámico.
