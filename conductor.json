@@ -1,0 +1,17 @@
+{
+  "project": "PROJ-presentacion",
+  "version": "1.0.0",
+  "lifecycle": {
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "lint": "npm run lint",
+    "preview": "npm run preview",
+    "deploy": "vercel --prod",
+    "test": "npm test"
+  },
+  "metadata": {
+    "agent": "Zenith (00)",
+    "status": "In Development",
+    "platform": "Vercel"
+  }
+}

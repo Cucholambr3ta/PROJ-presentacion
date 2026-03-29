@@ -1,0 +1,34 @@
+# implementation-tasks.yaml — PROJ-presentacion
+
+**Plan de Ejecución**: Fases 5-10
+**Proyecto**: Presentación de Título Elite
+
+## FASE 5: CORE ESTRUCTURAL (LAYOUT)
+- [ ] Implementación de `src/styles/design-tokens.css` (Colores, Spacing, Typography).
+- [ ] Estructuración de `src/App.jsx` con navegación de scroll.
+- [ ] Creación de componentes Base: Navbar, Footer.
+
+## FASE 6: DISEÑO VISUAL (WOW FACTOR)
+- [ ] Creación de la Hero Section con animaciones de entrada (Framer Motion).
+- [ ] Implementación de Glassmorphism en contenedores de contenido.
+- [ ] Inserción de assets premium (Icons, Backgrounds).
+
+## FASE 7: SECCIONES DINÁMICAS
+- [ ] Creación de `MetodologiaSection.jsx` con visualización de flujo.
+- [ ] Implementación de `ProyectosSection.jsx` (Galería interactiva).
+- [ ] Sección de `Resultados` con micro-animaciones de contador.
+
+## FASE 8: REFINAMIENTO Y PÚLIDO
+- [ ] Optimización de assets visuales (WebP/SVG).
+- [ ] Auditoría de accesibilidad (WCAG 2.1).
+- [ ] Pruebas de performance (Lighthouse > 95).
+
+## FASE 9: DESPLIEGUE (VERCEL)
+- [ ] Configuración de `vercel.json`.
+- [ ] Despliegue de staging y producción.
+- [ ] Validación final de enlaces y responsividad.
+
+## FASE 10: CIERRE
+- [ ] Entrega de manual de usuario y documentación final.
+- [ ] Sincronización final con el Vault de Obsidian.
+- [ ] Sello de proyecto en `memoria.md`.
