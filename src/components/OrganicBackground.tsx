@@ -1,3 +1,5 @@
+import { GradientDots } from "./ui/gradient-dots";
+
 export function OrganicBackground() {
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
@@ -5,24 +7,6 @@ export function OrganicBackground() {
       <div style={{
         position: "absolute", inset: 0,
         background: "linear-gradient(160deg, #FDF3E3 0%, #FAE8CC 40%, #F5D9B0 100%)",
-      }} />
-
-      {/* Blob top-right — terracotta */}
-      <div style={{
-        position: "absolute", top: "-10%", right: "-8%",
-        width: "55vw", height: "55vw", maxWidth: 600, maxHeight: 600,
-        borderRadius: "60% 40% 70% 30% / 50% 60% 40% 50%",
-        background: "radial-gradient(circle, rgba(234,111,56,0.18) 0%, transparent 70%)",
-        animation: "blobA 14s ease-in-out infinite alternate",
-      }} />
-
-      {/* Blob bottom-left — amber */}
-      <div style={{
-        position: "absolute", bottom: "-15%", left: "-10%",
-        width: "50vw", height: "50vw", maxWidth: 520, maxHeight: 520,
-        borderRadius: "40% 60% 30% 70% / 60% 40% 60% 40%",
-        background: "radial-gradient(circle, rgba(255,193,7,0.2) 0%, transparent 70%)",
-        animation: "blobB 18s ease-in-out infinite alternate",
       }} />
 
       {/* Blob mid — warm rose */}
@@ -33,6 +17,17 @@ export function OrganicBackground() {
         background: "radial-gradient(circle, rgba(210,120,60,0.08) 0%, transparent 70%)",
         animation: "blobC 20s ease-in-out infinite alternate",
       }} />
+
+      {/* Dynamic Gradient Dots Layer (MOVED TO TOP OF BLOBS) */}
+      <div style={{ position: "absolute", inset: 0, opacity: 0.8, zIndex: 1 }}>
+        <GradientDots 
+          dotSize={6} 
+          spacing={30}
+          duration={20}
+          dotColor="rgba(194, 68, 10, 0.8)"
+          backgroundColor="transparent"
+        />
+      </div>
 
       {/* Subtle grain texture */}
       <div style={{

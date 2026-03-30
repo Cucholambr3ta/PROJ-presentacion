@@ -1,0 +1,79 @@
+<mxfile host="65bd71144e">
+    <diagram id="alcance_final" name="Alcance y Arquitectura">
+        <mxGraphModel dx="1009" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="600" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="h1" value="Entregables del Proyecto (SaaS)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F3864;fontColor=#FFFFFF;fontStyle=1;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry width="266" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="h2" value="Arquitectura Cloud PaaS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E5FA3;fontColor=#FFFFFF;fontStyle=1;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="266" width="268" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="h3" value="Restricciones e Invariantnes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F7A45;fontColor=#FFFFFF;fontStyle=1;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="534" width="266" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="d1" value="" style="endArrow=none;html=1;strokeColor=#E5E7EB;dashed=1;strokeWidth=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="266" y="580" as="sourcePoint"/>
+                        <mxPoint x="266" y="32" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="d2" value="" style="endArrow=none;html=1;strokeColor=#E5E7EB;dashed=1;strokeWidth=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="534" y="580" as="sourcePoint"/>
+                        <mxPoint x="534" y="32" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e1" value="&lt;b&gt;App Web (Next.js 14)&lt;/b&gt;&lt;br&gt;Dashboard Admin &amp; Dashboard Cocina&lt;br&gt;Soporte Multi-tenant" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF2FC;strokeColor=#2E5FA3;fontColor=#1F3864;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="53" y="60" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" value="&lt;b&gt;App Móvil (Expo/React Native)&lt;/b&gt;&lt;br&gt;Terminal Garzón &amp; Menú Cliente&lt;br&gt;Sincronización QR/NFC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF2FC;strokeColor=#2E5FA3;fontColor=#1F3864;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="53" y="145" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3" value="&lt;b&gt;Base de Datos Relacional&lt;/b&gt;&lt;br&gt;Esquema PostgreSQL compartido&lt;br&gt;Aislamiento vía RLS (Supabase)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0E8;strokeColor=#1F7A45;fontColor=#1F3864;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="53" y="230" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4" value="&lt;b&gt;GitHub Monorepo&lt;/b&gt;&lt;br&gt;Estructura Turborepo&lt;br&gt;Pruebas E2E (Playwright)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0E8;strokeColor=#1F7A45;fontColor=#1F3864;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="53" y="315" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="arc1" value="&lt;font color=&quot;#d6e4f7&quot; style=&quot;font-size: 10px&quot;&gt;MONOREPO HUB&lt;/font&gt;&lt;br&gt;&lt;b&gt;Turborepo Workspace&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F3864;strokeColor=#2E5FA3;strokeWidth=2;fontColor=#FFFFFF;arcSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="60" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="arc2" value="&lt;font color=&quot;#d6e4f7&quot; style=&quot;font-size: 10px&quot;&gt;FRONTEND / CDN&lt;/font&gt;&lt;br&gt;&lt;b&gt;Vercel Edge Network&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F3864;strokeColor=#2E5FA3;strokeWidth=2;fontColor=#FFFFFF;arcSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="200" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="arc3" value="&lt;font color=&quot;#d6e4f7&quot; style=&quot;font-size: 10px&quot;&gt;BACKEND AS A SERVICE&lt;/font&gt;&lt;br&gt;&lt;b&gt;Supabase Core&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F3864;strokeColor=#2E5FA3;strokeWidth=2;fontColor=#FFFFFF;arcSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="340" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="arc4" value="Realtime WS / Auth JWT / RLS" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#d6e4f7;fontSize=9;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="440" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="res1" value="&lt;b&gt;Presupuesto Final: $0&lt;/b&gt;&lt;br&gt;Solo capas gratuitas (Free Tiers)&lt;br&gt;Cero inversión en infraestructura" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#B91C1C;fontColor=#B91C1C;arcSize=7;" parent="1" vertex="1">
+                    <mxGeometry x="587" y="40" width="163" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="res2" value="&lt;b&gt;Plazo de Entrega&lt;/b&gt;&lt;br&gt;Semanas: 16 – 18&lt;br&gt;Desarrollo Intensivo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#B91C1C;fontColor=#B91C1C;arcSize=7;" parent="1" vertex="1">
+                    <mxGeometry x="587" y="145" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="res3" value="&lt;b&gt;Gateway de Pagos&lt;/b&gt;&lt;br&gt;Excluido de la 1era fase&lt;br&gt;Enfoque en operación base" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#B91C1C;fontColor=#B91C1C;arcSize=7;" parent="1" vertex="1">
+                    <mxGeometry x="587" y="240" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="res4" value="&lt;b&gt;Conectividad&lt;/b&gt;&lt;br&gt;Dependencia de Internet estable&lt;br&gt;Fuera de alcance: Offline mode" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#92400E;fontColor=#92400E;arcSize=7;" parent="1" vertex="1">
+                    <mxGeometry x="580.5" y="340" width="173" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="f1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E5FA3;strokeWidth=1.5;endArrow=block;endFill=1;" parent="1" source="arc1" target="arc2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E5FA3;strokeWidth=1.5;endArrow=block;endFill=1;" parent="1" source="arc2" target="arc3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f3" value="PaaS Flow" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#2E5FA3;fontSize=8;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="280" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="foot" value="Menu Bytes Strategy Map · 2025 · TPY1101 · Corporate Vision" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F3864;fontColor=#FFFFFF;strokeColor=none;fontSize=9;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry y="580" width="800" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

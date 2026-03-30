@@ -35,7 +35,16 @@ const LeafIcon = () => (
 );
 
 /* ── Card ── */
-function Card({ title, description, icon: Icon, href, accent, tagLabel }) {
+interface CardProps {
+  title: string;
+  description: string;
+  icon: React.ElementType;
+  href: string;
+  accent: string;
+  tagLabel: string;
+}
+
+function Card({ title, description, icon: Icon, href, accent, tagLabel }: CardProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -189,10 +198,10 @@ const cardsArray = [
   },
   {
     title: "Ver Presentación",
-    description: "Conoce el portafolio completo y las soluciones gastronómicas que ofrecemos para tu negocio.",
+    description: "Conoce el ecosistema digital completo y las soluciones tecnológicas que ofrecemos.",
     icon: PresentationIcon,
-    href: "#presentation",
-    accent: "#B07010",
+    href: "/presentacion",
+    accent: "#C2440A",
     tagLabel: "Portafolio",
   },
 ];

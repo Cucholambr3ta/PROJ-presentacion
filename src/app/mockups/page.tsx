@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { OrganicBackground } from "@/components/OrganicBackground";
+import { Gallery4 } from "@/components/blocks/gallery4";
 
 const ArrowLeft = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -10,45 +11,87 @@ const ArrowLeft = () => (
   </svg>
 );
 
+const mockupsData = [
+  {
+    id: "cliente",
+    title: "Pantalla Cliente",
+    description: "Flujo de autoservicio y órdenes digitales para el comensal.",
+    href: "/navigation/client.html",
+    image: "/images/mockups/client.png",
+  },
+  {
+    id: "admin",
+    title: "Módulo Admin",
+    description: "Gestión centralizada de menús, precios y analíticas del local.",
+    href: "/navigation/admin.html",
+    image: "/images/mockups/admin.png",
+  },
+  {
+    id: "cajero",
+    title: "Módulo Cajero",
+    description: "Terminal de cobro y cierre de facturación rápida.",
+    href: "/navigation/cashier.html",
+    image: "/images/mockups/cashier.png",
+  },
+  {
+    id: "cocina",
+    title: "KDS (Cocina)",
+    description: "Monitor de producción y control de tiempos de despacho.",
+    href: "/navigation/kitchen.html",
+    image: "/images/mockups/kitchen.png",
+  },
+  {
+    id: "mesero",
+    title: "App Mesero",
+    description: "Toma de comandas ágil desde dispositivos móviles.",
+    href: "/navigation/waiter.html",
+    image: "/images/mockups/waiter.png",
+  },
+  {
+    id: "admin-mt",
+    title: "Multi-tenant Office",
+    description: "Monitor global para franquicias y múltiples sucursales.",
+    href: "/navigation/mt-admin.html",
+    image: "/images/mockups/mt-admin.png",
+  },
+];
+
 export default function MockupsPage() {
   return (
     <div style={{
       position: "relative", width: "100%", minHeight: "100vh",
-      display: "flex", alignItems: "center", justifyContent: "center",
+      display: "flex", alignItems: "flex-start", justifyContent: "center",
       padding: "2.5rem 1.5rem", overflow: "hidden",
       fontFamily: "'DM Sans', sans-serif",
     }}>
-      
-      {/* Fondo compartido */}
+
       <OrganicBackground />
 
       {/* Content */}
       <div style={{
         position: "relative", zIndex: 2,
-        width: "100%", maxWidth: "860px", margin: "0 auto",
+        width: "100%", maxWidth: "1200px", margin: "0 auto",
       }}>
 
         {/* Navegación y Header */}
-        <div style={{ marginBottom: "3rem" }}>
-          
-          <Link href="/" className="fade-in delay-1" style={{
+        <div style={{ marginBottom: "2rem" }}>
+
+          <Link href="/" style={{
             display: "inline-flex", alignItems: "center", gap: "0.45rem",
-            marginBottom: "2rem", color: "#C2440A",
+            marginBottom: "2rem", color: "#B07040",
             fontSize: "0.72rem", fontWeight: 700,
             letterSpacing: "0.1em", textTransform: "uppercase",
             fontFamily: "'DM Sans', sans-serif",
             textDecoration: "none",
-            transition: "transform 0.3s ease",
+            transition: "all 0.3s ease",
           }}
-          onMouseEnter={(e) => e.currentTarget.style.transform = 'translateX(-5px)'}
-          onMouseLeave={(e) => e.currentTarget.style.transform = 'translateX(0)'}
+            className="fade-in delay-1 group hover:text-[#C2440A] hover:translate-x-[-4px]"
           >
             <ArrowLeft />
             <span>Volver al menú</span>
           </Link>
 
           <div>
-            {/* Top badge */}
             <div className="fade-in delay-1" style={{
               display: "inline-flex", alignItems: "center", gap: "6px",
               padding: "0.3rem 0.9rem", borderRadius: "999px",
@@ -57,15 +100,14 @@ export default function MockupsPage() {
               marginBottom: "1.1rem",
               color: "#C2440A",
               fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.12em",
-              textTransform: "uppercase", fontFamily: "'DM Sans', sans-serif",
+              textTransform: "uppercase",
             }}>
-              Colección Completa
+              Colección Digital
             </div>
 
-            {/* Main title */}
             <h1 className="fade-up delay-2" style={{
               margin: "0 0 1rem",
-              fontSize: "clamp(2.8rem, 7vw, 5rem)",
+              fontSize: "clamp(2.5rem, 6vw, 4rem)",
               fontWeight: 800,
               letterSpacing: "-0.04em",
               lineHeight: 1.0,
@@ -83,65 +125,37 @@ export default function MockupsPage() {
               </span>
             </h1>
 
-            {/* Subtítulo y Lista */}
             <div className="fade-up delay-3" style={{
-              fontSize: "1.05rem", color: "#7A5035",
-              maxWidth: "36rem",
-              lineHeight: 1.75, fontWeight: 300,
-              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "1.08rem", color: "#7A5035",
+              maxWidth: "42rem",
+              lineHeight: 1.7, fontWeight: 300,
             }}>
-              <p style={{ marginBottom: "1.25rem", color: "#5A3A25" }}>
-                Catálogo de las distintas pantallas y flujos que se encuentran dentro de Menu Bytes. <br />
-                Acá estarán las pantallas interactivas de:
+              <p>
+                Explora los flujos digitales que componen el ecosistema de <strong>Menu Bytes</strong>.
+                Esta demostración, bajo la identidad visual de la marca ficticia <em>"Trattoria Toscana"</em>,
+                ilustra la capacidad camaleónica de nuestra plataforma para adoptar el ADN de cada cliente
+                garantizando una experiencia de marca coherente y una eficiencia operativa absoluta.
               </p>
-              
-              <ul style={{
-                margin: 0, padding: 0, listStyle: "none",
-                display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-                gap: "0.85rem",
-              }}>
-                {['Cliente', 'Admin', 'Cajero', 'Cocina', 'Mesero', 'Admin Multi-tenant'].map((rol) => (
-                  <li key={rol} style={{
-                    display: "flex", alignItems: "center", gap: "8px",
-                    background: "rgba(194,68,10,0.06)",
-                    padding: "0.5rem 0.8rem",
-                    borderRadius: "0.5rem",
-                    border: "1px solid rgba(194,68,10,0.15)",
-                  }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C2440A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "#C2440A" }}>{rol}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
 
-        {/* Zona de contenido (Placeholder de los mockups de admin.pen) */}
-        <div className="fade-up delay-4" style={{
-           width: "100%",
-           minHeight: "400px",
-           display: "flex", alignItems: "center", justifyContent: "center",
-           background: "rgba(255, 250, 240, 0.4)",
-           border: "2px dashed rgba(180,120,60,0.2)",
-           borderRadius: "1.5rem",
-           backdropFilter: "blur(12px)",
-           color: "#7A4F35",
-           fontSize: "0.9rem",
-           fontFamily: "'DM Sans', sans-serif",
-        }}>
-           [ Área reservada para la galería de mockups ]
+        {/* Galería Interactiva */}
+        <div className="fade-up delay-4" style={{ marginTop: "-2.5rem" }}>
+          <Gallery4
+            title="Explosión Visual"
+            description="Interactúa con cada tarjeta para navegar por los prototipos vivos de Menu Bytes."
+            items={mockupsData}
+          />
         </div>
 
-        {/* Footer hint */}
+        {/* Footer */}
         <p className="fade-in delay-4" style={{
-          textAlign: "center", marginTop: "2.5rem",
+          textAlign: "center", marginTop: "1rem",
           fontSize: "0.75rem", color: "rgba(120,80,50,0.5)",
-          letterSpacing: "0.06em", fontFamily: "'DM Sans', sans-serif",
+          letterSpacing: "0.06em",
         }}>
-          © 2025 Menu Bytes
+          © 2025 Menu Bytes · Design by OLYMP-IA
         </p>
       </div>
     </div>

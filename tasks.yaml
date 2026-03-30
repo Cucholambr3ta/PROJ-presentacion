@@ -4,24 +4,26 @@
 **Proyecto**: Presentación de Título Elite
 
 ## FASE 5: CORE ESTRUCTURAL (LAYOUT)
-- [ ] Implementación de `src/styles/design-tokens.css` (Colores, Spacing, Typography).
-- [ ] Estructuración de `src/App.jsx` con navegación de scroll.
-- [ ] Creación de componentes Base: Navbar, Footer.
+- [x] Implementación de `src/styles/design-tokens.css` (Colores, Spacing, Typography).
+- [x] Estructuración de `src/App.jsx` con navegación de scroll.
+- [x] Creación de componentes Base: Navbar, Footer.
 
 ## FASE 6: DISEÑO VISUAL (WOW FACTOR)
-- [ ] Creación de la Hero Section con animaciones de entrada (Framer Motion).
-- [ ] Implementación de Glassmorphism en contenedores de contenido.
-- [ ] Inserción de assets premium (Icons, Backgrounds).
+- [x] Creación de la Hero Section con animaciones de entrada (Framer Motion).
+- [x] Implementación de Glassmorphism en contenedores de contenido.
+- [x] Inserción de assets premium (Icons, Backgrounds).
 
-## FASE 7: SECCIONES DINÁMICAS
-- [ ] Creación de `MetodologiaSection.jsx` con visualización de flujo.
-- [ ] Implementación de `ProyectosSection.jsx` (Galería interactiva).
-- [ ] Sección de `Resultados` con micro-animaciones de contador.
+## FASE 7: SECCIONES DINÁMICAS (EXPANSIÓN DE NAVEGACIÓN)
+- [x] Refactorización de `PresentacionPage.jsx` para tarjetas interactiva.
+- [x] Creación de subpágina `/presentacion/vision` (Visión Detallada).
+- [x] Creación de subpágina `/presentacion/ingenieria` (Ingeniería Detallada).
+- [x] Creación de subpágina `/presentacion/metodologia` (Metodología Detallada).
+- [x] Implementación de navegación jerárquica de retorno.
 
-## FASE 8: REFINAMIENTO Y PÚLIDO
-- [ ] Optimización de assets visuales (WebP/SVG).
-- [ ] Auditoría de accesibilidad (WCAG 2.1).
-- [ ] Pruebas de performance (Lighthouse > 95).
+## FASE 8: ARMONIZACIÓN ESTÉTICA (BRANDING)
+- [x] Sincronización de colores tipográficos (Naranja #C2440A, Café #2C1A0E).
+- [x] Ajuste de pesos y estilos de fuentes (Fraunces & DM Sans).
+- [x] Refinamiento de hover states y enlaces en Mockups.
 
 ## FASE 9: DESPLIEGUE (VERCEL)
 - [ ] Configuración de `vercel.json`.

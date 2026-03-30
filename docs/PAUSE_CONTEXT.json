@@ -1,14 +1,25 @@
 {
+  "timestamp": "2026-03-29T20:54:00-03:00",
   "project_id": "PROJ-presentacion",
-  "phase": "Planificación y Preparación",
   "status": "PAUSED",
-  "last_decision": "Mapear páginas .html a public/navigation/ e imágenes de tarjetas a la carpeta public/images/mockups/.",
-  "pending_tasks": [
-    "Ejecutar inicialización de shadcn/ui (npx shadcn@latest init -d).",
-    "Instalar dependencias base (button, carousel, lucide-react).",
-    "Instalar e inyectar componente Gallery4 desde 21st.dev.",
-    "Refactorizar mockups/page.tsx insertando Gallery4 y conectar con arreglos estáticos locales.",
-    "Mover directorio /navigation a /public/navigation para servir prototipos estáticos nativamente."
-  ],
-  "timestamp": "2026-03-29T21:31:00Z"
+  "context": {
+    "phase": "Mockups Gallery Redesign",
+    "achievements": [
+      "Gallery4 component integrated and customized for Menu Bytes.",
+      "Autoplay functionality added via embla-carousel-autoplay.",
+      "Copywriting improved contextually for Trattoria Toscana.",
+      "Card design refined with warm background (#FCF7F1) and black contrast.",
+      "Navigation moved to public/navigation for native serving."
+    ],
+    "pending_tasks": [
+      "Review user's recent manual reverts of 'no-underline' and link colors.",
+      "Final aesthetic validation of the 'Black & Warm' redesign."
+    ],
+    "last_user_decision": "The user requested project pause after final visual tweaks."
+  },
+  "environment": {
+    "port": 3002,
+    "framework": "Next.js 16.2.1",
+    "dependencies_added": ["lucide-react", "embla-carousel-autoplay", "shadcn-carousel"]
+  }
 }

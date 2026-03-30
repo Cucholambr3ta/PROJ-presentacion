@@ -1,0 +1,106 @@
+<mxfile host="65bd71144e">
+    <diagram id="agile_cycle" name="Metodología Ágil Menu Bytes">
+        <mxGraphModel dx="1119" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="600" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                
+                <!-- Center: Sprint Cycle -->
+                <mxCell id="c1" value="&lt;b&gt;Sprint&lt;/b&gt;&lt;br&gt;2 Semanas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1F3864;fontColor=#FFFFFF;strokeColor=none;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="240" width="160" height="120" as="geometry"/>
+                </mxCell>
+
+                <!-- Step 1: Backlog -->
+                <mxCell id="s1" value="&lt;b&gt;Product Backlog&lt;/b&gt;&lt;br&gt;Priorización de Historias" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF2FC;strokeColor=#1F3864;fontColor=#1F3864;arcSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="80" width="160" height="60" as="geometry"/>
+                </mxCell>
+
+                <!-- Step 2: Planning -->
+                <mxCell id="s2" value="&lt;b&gt;Sprint Planning&lt;/b&gt;&lt;br&gt;Definición de Tareas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF2FC;strokeColor=#1F3864;fontColor=#1F3864;arcSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="160" width="160" height="60" as="geometry"/>
+                </mxCell>
+
+                <!-- Step 3: Development -->
+                <mxCell id="s3" value="&lt;b&gt;Desarrollo (Sprint)&lt;/b&gt;&lt;br&gt;Codificación &amp; Pair Prog" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E4F7;strokeColor=#2E5FA3;fontColor=#1F3864;arcSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="580" y="320" width="160" height="60" as="geometry"/>
+                </mxCell>
+
+                <!-- Step 4: QA & Code Review -->
+                <mxCell id="s4" value="&lt;b&gt;QA &amp; Code Review&lt;/b&gt;&lt;br&gt;TDD &amp; Pruebas Automatizadas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0E8;strokeColor=#1F7A45;fontColor=#003300;arcSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="460" width="160" height="60" as="geometry"/>
+                </mxCell>
+
+                <!-- Step 5: Demo & Deploy -->
+                <mxCell id="s5" value="&lt;b&gt;Demo &amp; Deploy&lt;/b&gt;&lt;br&gt;Entrega Continua" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F7A45;strokeColor=#003300;fontColor=#FFFFFF;arcSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="320" width="160" height="60" as="geometry"/>
+                </mxCell>
+
+                <!-- Step 6: Feedback -->
+                <mxCell id="s6" value="&lt;b&gt;Feedback Usuario&lt;/b&gt;&lt;br&gt;Refinamiento de Idea" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAE8CC;strokeColor=#B07040;fontColor=#2C1A0E;arcSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="160" width="160" height="60" as="geometry"/>
+                </mxCell>
+
+                <!-- Connectors (Cycle) -->
+                <mxCell id="e1" value="" style="curved=1;endArrow=classic;html=1;fontColor=#1F3864;strokeColor=#1F3864;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="s1" target="s2" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="480" y="110" as="sourcePoint"/>
+                        <mxPoint x="540" y="140" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="520" y="110"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e2" value="" style="curved=1;endArrow=classic;html=1;strokeColor=#2E5FA3;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s2" target="s3" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="640" y="240" as="sourcePoint"/>
+                        <mxPoint x="640" y="310" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="650" y="260"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e3" value="" style="curved=1;endArrow=classic;html=1;strokeColor=#1F7A45;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="s3" target="s4" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="660" y="400" as="sourcePoint"/>
+                        <mxPoint x="550" y="480" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="620" y="470"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4" value="" style="curved=1;endArrow=classic;html=1;strokeColor=#1F7A45;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="s4" target="s5" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="300" y="490" as="sourcePoint"/>
+                        <mxPoint x="140" y="400" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="180" y="470"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e5" value="" style="curved=1;endArrow=classic;html=1;strokeColor=#B07040;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="s5" target="s6" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="140" y="300" as="sourcePoint"/>
+                        <mxPoint x="140" y="230" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="140" y="260"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e6" value="" style="curved=1;endArrow=classic;html=1;strokeColor=#1F3864;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="s6" target="s1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="140" y="150" as="sourcePoint"/>
+                        <mxPoint x="230" y="100" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="200" y="110"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- Secondary Info -->
+                <mxCell id="foot" value="Menu Bytes · Marco Scrum Adaptado · Ciclos de Valor de 2 Semanas · 2026" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F3864;fontColor=#FFFFFF;strokeColor=none;fontSize=9;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry y="580" width="800" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

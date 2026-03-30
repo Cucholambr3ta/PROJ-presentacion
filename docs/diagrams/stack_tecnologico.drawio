@@ -1,0 +1,88 @@
+<mxfile host="65bd71144e">
+    <diagram id="stack_final" name="Stack Tecnológico Menu Bytes">
+        <mxGraphModel dx="1119" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="600" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                
+                <!-- Headers -->
+                <mxCell id="h1" value="FRONTEND &amp; UI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F3864;fontColor=#FFFFFF;fontStyle=1;strokeColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry width="266" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="h2" value="CORE BACKEND (BaaS)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E5FA3;fontColor=#FFFFFF;fontStyle=1;strokeColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="266" width="268" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="h3" value="MOBILE &amp; OMNICHANNEL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F7A45;fontColor=#FFFFFF;fontStyle=1;strokeColor=none;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="534" width="266" height="32" as="geometry"/>
+                </mxCell>
+
+                <!-- Divisor Lines -->
+                <mxCell id="d1" value="" style="endArrow=none;html=1;strokeColor=#E5E7EB;dashed=1;strokeWidth=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="266" y="580" as="sourcePoint"/>
+                        <mxPoint x="266" y="32" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="d2" value="" style="endArrow=none;html=1;strokeColor=#E5E7EB;dashed=1;strokeWidth=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="534" y="580" as="sourcePoint"/>
+                        <mxPoint x="534" y="32" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- NEXT.JS 14 Block (Column 1) -->
+                <mxCell id="n1" value="&lt;b&gt;Next.js 14&lt;/b&gt;&lt;br&gt;App Router &amp; Server Components" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#FFFFFF;strokeWidth=2;fontColor=#FFFFFF;arcSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="53" y="60" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="n2" value="Tailwind CSS&lt;br&gt;PostCSS &amp; Shadcn UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF2FC;strokeColor=#2E5FA3;fontColor=#1F3864;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="53" y="140" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="n3" value="Framer Motion&lt;br&gt;Micro-animaciones" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF2FC;strokeColor=#2E5FA3;fontColor=#1F3864;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="53" y="190" width="160" height="40" as="geometry"/>
+                </mxCell>
+
+                <!-- SUPABASE Block (Column 2) -->
+                <mxCell id="s1" value="&lt;b&gt;Supabase&lt;/b&gt;&lt;br&gt;Firebase Alternative" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3ECF8E;strokeColor=#003300;strokeWidth=2;fontColor=#003300;arcSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="60" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="s2" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;Row Level Security &amp; Views" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E4F7;strokeColor=#2E5FA3;fontColor=#1F3864;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="140" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="s3" value="Auth JWT &amp; Social IDs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E4F7;strokeColor=#2E5FA3;fontColor=#1F3864;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="190" width="160" height="40" as="geometry"/>
+                </mxCell>
+
+                <!-- EXPO / MOBILE Block (Column 3) -->
+                <mxCell id="e1" value="&lt;b&gt;Expo / React Native&lt;/b&gt;&lt;br&gt;Terminal de Garzón &amp; Cliente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;arcSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="587" y="60" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" value="Native Components&lt;br&gt;Fast Refresh" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0E8;strokeColor=#1F7A45;fontColor=#003300;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="587" y="140" width="160" height="40" as="geometry"/>
+                </mxCell>
+
+                <!-- QUALITY / TOOLS Block (Sub-row) -->
+                <mxCell id="t1" value="&lt;b&gt;TypeScript&lt;/b&gt;&lt;br&gt;Tipado Estricto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3178C6;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="53" y="350" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="t2" value="&lt;b&gt;Turborepo&lt;/b&gt;&lt;br&gt;Monorepo Hub" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EF4444;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="350" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="t3" value="&lt;b&gt;GitHub Actions&lt;/b&gt;&lt;br&gt;CI/CD Pipeline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#181717;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="587" y="350" width="160" height="50" as="geometry"/>
+                </mxCell>
+
+                <!-- Connectors -->
+                <mxCell id="cn1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#2E5FA3;strokeWidth=1.5;endArrow=block;endFill=1;startArrow=diamond;startFill=1;" parent="1" source="n1" target="s1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="cn2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1F7A45;strokeWidth=1.5;endArrow=block;endFill=1;startArrow=diamond;startFill=1;" parent="1" source="e1" target="s1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="foot" value="Menu Bytes · Full-Stack Ecosystem · Elite Architecture · 2026" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F3864;fontColor=#FFFFFF;strokeColor=none;fontSize=9;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry y="580" width="800" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

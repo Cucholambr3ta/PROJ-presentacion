@@ -1,183 +1,297 @@
 "use client";
 
-import React from "react";
-import {
+import React, { useState } from "react";
+import Link from "next/link";
+import { 
+  ArrowLeft, 
+  Layers, 
+  Zap, 
+  Smartphone, 
+  Database, 
+  ChevronRight,
   Sparkles,
-  Presentation,
-  TrendingUp,
-  List,
-  CheckCircle,
-  Globe,
-  Award
+  Users,
+  Compass,
+  Calendar,
+  Cpu,
+  ArrowRight
 } from "lucide-react";
+import { OrganicBackground } from "@/components/OrganicBackground";
 
-function cn(...inputs: (string | undefined | null | false)[]): string {
-  return inputs.filter(Boolean).join(" ");
+const ArrowLeftIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="19" y1="12" x2="5" y2="12" />
+    <polyline points="12 19 5 12 12 5" />
+  </svg>
+);
+
+interface PartIndicatorProps {
+  number: string;
+  label: string;
 }
+
+const PartIndicator: React.FC<PartIndicatorProps> = ({ number, label }) => (
+  <div className="fade-in delay-2" style={{
+    display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem",
+    borderLeft: "4px solid #C2440A", paddingLeft: "1.5rem"
+  }}>
+    <span style={{ 
+      fontSize: "4rem", fontWeight: 900, color: "rgba(194,68,10,0.15)", 
+      fontFamily: "'Fraunces', serif", lineHeight: 1 
+    }}>{number}</span>
+    <span style={{ 
+      fontSize: "1.25rem", fontWeight: 700, color: "#C2440A", 
+      textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "'DM Sans', sans-serif" 
+    }}>{label}</span>
+  </div>
+);
 
 interface SectionProps {
   title: string;
   description: string;
   icon: React.ReactNode;
-  highlights?: string[];
+  highlights: string[];
+  index: number;
+  href: string;
 }
 
-const Section: React.FC<SectionProps> = ({
-  title,
-  description,
-  icon,
-  highlights = [],
-}) => {
-  return (
-    <section className="relative py-20 md:py-24">
-      {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)] z-0" />
+const Section: React.FC<SectionProps> = ({ title, description, icon, highlights, index, href }) => {
+  const [isHovered, setIsHovered] = useState(false);
 
-      {/* Glassmorphism Card */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 md:p-16">
-          {/* Icon Container */}
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#DAA520]/20 to-[#DAA520]/10 mb-6">
-            <div className="text-[#DAA520] flex items-center justify-center">
+  return (
+    <Link 
+      href={href}
+      className={`fade-up delay-${(index % 4) + 1} group`}
+      style={{
+        display: "block",
+        position: "relative",
+        background: isHovered ? "rgba(255, 250, 240, 0.95)" : "rgba(255, 250, 240, 0.7)",
+        backdropFilter: "blur(14px)",
+        WebkitBackdropFilter: "blur(14px)",
+        border: isHovered ? "2px solid #C2440A" : "1.5px solid rgba(180,120,60,0.15)",
+        borderRadius: "2.5rem",
+        padding: "3rem",
+        marginBottom: "3rem",
+        boxShadow: isHovered ? "0 20px 50px rgba(194,68,10,0.1)" : "0 12px 40px rgba(160,82,45,0.06)",
+        transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+        transform: isHovered ? "scale(1.02) translateY(-5px)" : "scale(1)",
+        textDecoration: "none",
+        cursor: "pointer",
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+            <div style={{
+              display: "flex", alignItems: "center", justifyContent: "center",
+              width: "4rem", height: "4rem", borderRadius: "1.25rem",
+              background: isHovered ? "#C2440A" : "rgba(194,68,10,0.12)",
+              border: "1.5px solid rgba(194,68,10,0.25)",
+              color: isHovered ? "#FFFFFF" : "#C2440A",
+              flexShrink: 0,
+              transition: "all 0.3s ease",
+            }}>
               {icon}
             </div>
+            <h3 style={{
+              margin: 0,
+              fontSize: "2rem", fontWeight: 800,
+              letterSpacing: "-0.03em",
+              color: "#2C1A0E",
+              fontFamily: "'Fraunces', serif",
+            }}>
+              {title}
+            </h3>
+          </div>
+          <div style={{
+            opacity: isHovered ? 1 : 0,
+            transform: isHovered ? "translateX(0)" : "translateX(-10px)",
+            transition: "all 0.3s ease",
+            color: "#C2440A"
+          }}>
+            <ArrowRight size={32} strokeWidth={2.5} />
+          </div>
+        </div>
+
+        <p style={{
+          margin: 0, fontSize: "1.1rem", lineHeight: 1.8,
+          color: "#7A5035",
+          fontFamily: "'DM Sans', sans-serif",
+          fontWeight: 400,
+        }}>
+          {description}
+        </p>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem", marginTop: "0.5rem" }}>
+          {highlights.map((h, i) => (
+            <div key={i} style={{ 
+              display: "flex", alignItems: "center", gap: "0.85rem",
+              background: isHovered ? "rgba(194,68,10,0.05)" : "rgba(255,255,255,0.4)", 
+              padding: "0.75rem 1rem", borderRadius: "1rem",
+              transition: "all 0.3s ease",
+            }}>
+              <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#C2440A" }} />
+              <span style={{ fontSize: "0.9rem", color: "#2C1A0E", fontWeight: 600, fontFamily: "'DM Sans', sans-serif" }}>{h}</span>
+            </div>
+          ))}
+        </div>
+
+        <div style={{
+          marginTop: "1rem",
+          fontSize: "0.85rem",
+          fontWeight: 700,
+          color: "#C2440A",
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          textTransform: "uppercase",
+          letterSpacing: "0.1em",
+          opacity: 0.8
+        }}>
+          <span>Explorar sección</span>
+          <ChevronRight size={14} />
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export default function PresentationPage() {
+  const sections = [
+    {
+      title: "Visión & Estrategia",
+      description: "Redefinimos el servicio gastronómico mediante la digitalización estratégica de sus procesos. Menú Bytes orquesta un flujo operativo eficiente que conecta a clientes, personal de salón y cocina en tiempo real, eliminando fricciones tradicionales.",
+      icon: <Compass size={32} />,
+      highlights: ["Digitalización de Procesos Críticos", "Flujo Operativo de Alta Eficiencia", "Comunicación Realtime Multicanal"],
+      href: "/presentacion/vision"
+    },
+    {
+      title: "Ingeniería Avanzada",
+      description: "Stack de alto rendimiento basado en Next.js 16 y Turbopack. Implementación de Diseño Atómico y componentes reactivos con optimización de carga extrema para una respuesta instantánea.",
+      icon: <Cpu size={32} />,
+      highlights: ["Turbo-Engine Performance", "Atomic Design System", "Reactividad Extrema (Next.js 16)"],
+      href: "/presentacion/ingenieria"
+    },
+    {
+      title: "Gestión & Metodología",
+      description: "Planificación robusta ejecutada en un Roadmap de 16 semanas. Enfoque en la entrega de valor constante mediante ciclos iterativos y estándares de calidad bajo el protocolo OLYMP-IA.",
+      icon: <Calendar size={32} />,
+      highlights: ["Roadmap de 16 Semanas", "Agile SCRUM Core", "Quality Gates (Tier 1-3)"],
+      href: "/presentacion/metodologia"
+    }
+  ];
+
+  return (
+    <div style={{
+      position: "relative", width: "100%", minHeight: "100vh",
+      display: "flex", alignItems: "flex-start", justifyContent: "center",
+      padding: "2.5rem 1.5rem", overflow: "hidden",
+      fontFamily: "'DM Sans', sans-serif",
+    }}>
+      <OrganicBackground />
+
+      <div style={{
+        position: "relative", zIndex: 2,
+        width: "100%", maxWidth: "1000px", margin: "0 auto",
+      }}>
+
+        {/* Back Button */}
+        <Link href="/" style={{
+          display: "inline-flex", alignItems: "center", gap: "0.45rem",
+          marginBottom: "3rem", color: "#B07040",
+          fontSize: "0.72rem", fontWeight: 700,
+          letterSpacing: "0.12em", textTransform: "uppercase",
+          fontFamily: "'DM Sans', sans-serif",
+          textDecoration: "none",
+          transition: "all 0.3s ease",
+        }}
+          className="fade-in delay-1 group hover:text-[#C2440A] hover:translate-x-[-4px]"
+        >
+          <ArrowLeftIcon />
+          <span>Volver al menú</span>
+        </Link>
+
+        {/* --- CARÁTULA --- */}
+        <div style={{ marginBottom: "6rem" }}>
+          <div className="fade-in delay-1" style={{
+            display: "inline-flex", alignItems: "center", gap: "10px",
+            padding: "0.4rem 1.2rem", borderRadius: "999px",
+            background: "rgba(194,68,10,0.08)",
+            border: "1.5px solid rgba(194,68,10,0.15)",
+            marginBottom: "1.5rem",
+            color: "#C2440A",
+            fontSize: "0.75rem", fontWeight: 800, letterSpacing: "0.15em",
+            textTransform: "uppercase",
+          }}>
+            Taller Aplicado de Programación (TPY1101)
           </div>
 
-          {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-6">
-            {title}
-          </h2>
-
-          {/* Description */}
-          <p className="text-lg text-zinc-300 text-center mb-10 leading-relaxed max-w-2xl mx-auto">
-            {description}
-          </p>
-
-          {/* Highlights List */}
-          {highlights.length > 0 && (
-            <div className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">
-                Puntos Destacados
-              </h3>
-              <ul className="space-y-3 text-zinc-200">
-                {highlights.map((highlight, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <span className="flex h-3 w-3 items-center justify-center bg-[#DAA520]/20 rounded-full mt-1">
-                      <Sparkles className="h-2 w-2 text-[#DAA520]" />
-                    </span>
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-
-        {/* Ambient Glow */}
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(218,165,32,0.05)_70%)] pointer-events-none" />
-      </div>
-    </section>
-  );
-};
-
-const PresentationPage: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-zinc-950 text-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-[url(https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80)] bg-cover bg-center opacity-10"
-          style={{
-            maskImage: "radial-gradient(circle at center, black 0%, transparent 70%)",
-          }}
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] z-0" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10">
-        {/* Header */}
-        <div className="text-center py-16 md:py-20 space-y-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-br from-white via-white to-[#DAA520] bg-clip-text text-transparent">
-            Presentación de Título
+          <h1 className="fade-up delay-2" style={{
+            margin: "0 0 2rem",
+            fontSize: "clamp(3rem, 8vw, 5.5rem)",
+            fontWeight: 900,
+            letterSpacing: "-0.05em",
+            lineHeight: 0.95,
+            fontFamily: "'Fraunces', serif",
+            color: "#2C1A0E",
+          }}>
+            Proyecto <br />
+            <span style={{
+              fontStyle: "italic",
+              background: "linear-gradient(135deg, #EA6F38 0%, #C2440A 60%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>
+              Menú Bytes
+            </span>
           </h1>
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto">
-            Defensa del Proyecto de Graduación
-          </p>
+
+          <div className="fade-up delay-3" style={{
+            display: "flex", flexWrap: "wrap", gap: "2.5rem", marginTop: "3rem"
+          }}>
+            <div>
+              <p style={{ color: "#B07040", fontSize: "0.65rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "0.75rem" }}>
+                Integrantes
+              </p>
+              <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
+                {["José Medina", "Alejandro Placencia", "Héctor Robledo"].map(name => (
+                  <div key={name} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#2C1A0E", fontWeight: 700, fontSize: "1.1rem" }}>
+                    <Users size={16} strokeWidth={3} style={{ color: "#C2440A" }} />
+                    {name}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div style={{ maxWidth: "340px" }}>
+              <p style={{ color: "#B07040", fontSize: "0.65rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: "0.75rem" }}>
+                Propuesta
+              </p>
+              <p style={{ color: "#7A5035", fontSize: "1rem", lineHeight: 1.6 }}>
+                Digitalización del ecosistema gastronómico mediante una arquitectura modular y escalable.
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Sections */}
-        <Section
-          title="Introducción y Contexto"
-          description="Exploramos el origen del problema, su relevancia académica y profesional, y establecemos los objetivos que guiaron nuestro trabajo de investigación y desarrollo."
-          icon={<Globe className="w-8 h-8" />}
-          highlights=[
-            "Problema identificado en el ámbito específico de estudio",
-            "Relevancia para el desarrollo profesional y académico",
-            "Objetivos claros y medibles del proyecto"
-          ]
-        />
-
-        <Section
-          title="Metodología y Enfoque"
-          description="Detallamos las metodologías empleadas, las herramientas tecnológicas utilizadas y el proceso sistemático seguido para abordar el problema planteado."
-          icon={<List className="w-8 h-8" />}
-          highlights=[
-            "Enfoque mixto: teórico y práctico",
-            "Tecnologías seleccionadas según criterios de idoneidad",
-            "Metodología iterativa con retroalimentación continua"
-          ]
-        />
-
-        <Section
-          title="Solución Propuesta"
-          description="Presentamos nuestra solución innovadora, describiendo sus componentes principales, funcionalidades clave y cómo responde efectivamente al problema inicial."
-          icon={<TrendingUp className="w-8 h-8" />}
-          highlights=[
-            "Arquitectura modular y escalable",
-            "Funcionalidades centradas en el usuario",
-            "Integración de mejores prácticas de la industria"
-          ]
-        />
-
-        <Section
-          title="Resultados y Logros"
-          description="Analizamos los resultados obtenidos mediante pruebas rigurosas, validación con casos de uso reales y evaluación frente a los objetivos iniciales establecidos."
-          icon={<Award className="w-8 h-8" />}
-          highlights=[
-            "Cumplimiento de todos los objetivos planteados",
-            "Validación exitosa en entornos de prueba",
-            "Métricas de rendimiento superiores a las esperadas"
-          ]
-        />
-
-        <Section
-          title="Conclusiones y Trabajo Futuro"
-          description="Reflexionamos sobre los aprendizajes obtenidos, las limitaciones identificadas y proponemos líneas de trabajo futuro para continuar evolucionando la solución."
-          icon={<CheckCircle className="w-8 h-8" />}
-          highlights=[
-            "Conclusiones sólidas basadas en evidencia empírica",
-            "Identificación de oportunidades de mejora",
-            "Plan de trabajo futuro definido y priorizado"
-          ]
-        />
-
-        {/* Call to Action */}
-        <div className="text-center py-20 md:py-24">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-            ¡Gracias por su atención!
-          </h3>
-          <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
-            Estamos disponibles para preguntas y discusión adicional sobre nuestro trabajo.
-          </p>
+        {/* --- DYNAMIC SECTIONS --- */}
+        <div style={{ marginBottom: "8rem" }}>
+          {sections.map((section, idx) => (
+            <div key={idx} style={{ marginBottom: "6rem" }}>
+              <PartIndicator number={`0${idx + 1}`} label={section.title.split(' ')[0]} />
+              <Section 
+                index={idx}
+                {...section}
+              />
+            </div>
+          ))}
         </div>
+
+
       </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-1/3 left-1/10 w-32 h-32 bg-[#DAA520]/5 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/5 w-48 h-48 bg-[#DAA520]/5 rounded-full blur-[96px] pointer-events-none" />
     </div>
   );
-};
-
-export default PresentationPage;
+}
