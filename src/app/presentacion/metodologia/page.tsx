@@ -190,28 +190,28 @@ export default function MethodologyPage() {
                   {/* Card JL */}
                   <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.25rem" }}>
                     <div style={{ display: "inline-block", background: "rgba(59,130,246,0.1)", color: "#2563eb", padding: "0.2rem 0.6rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
-                      MONOREPO & ORQ.
+                      PRODUCT OWNER/MANAGER
                     </div>
                     <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.25rem 0" }}>Jose Luis Medina</h3>
-                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.4 }}>Arquitecto / Líder · Integración</p>
+                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.4 }}>Product Owner / Product Manager</p>
                   </div>
 
                   {/* Card Hector */}
                   <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.25rem" }}>
                     <div style={{ display: "inline-block", background: "rgba(194,68,10,0.12)", color: "#c2440a", padding: "0.2rem 0.6rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
-                      RLS & EDGE FUNC.
+                      QA & DEV
                     </div>
                     <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.25rem 0" }}>Hector Robledo</h3>
-                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.4 }}>Backend / Seguridad</p>
+                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.4 }}>QA / Desarrollador</p>
                   </div>
 
                   {/* Card Alejandro */}
                   <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.25rem" }}>
                     <div style={{ display: "inline-block", background: "rgba(124,58,237,0.1)", color: "#7c3aed", padding: "0.2rem 0.6rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
-                      DESIGN SYSTEM
+                      UX/UI & DEV
                     </div>
-                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.25rem 0" }}>A. Placencia</h3>
-                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.4 }}>UX/UI Lead · Interfaces Web/App</p>
+                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.25rem 0" }}>Alejandro Placencia</h3>
+                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.4 }}>Diseñador UX UI y Desarrollador</p>
                   </div>
                 </div>
 
