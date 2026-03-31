@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { ArrowLeft, GitFork, ClipboardCheck, Calendar, Rocket, ChevronDown, ChevronUp, Mic } from "lucide-react";
 import { OrganicBackground } from "@/components/OrganicBackground";
-import { motion, AnimatePresence } from "framer-motion";
+import { ContainerScroll, CardSticky } from "@/components/ui/cards-stack";
 
 const ArrowLeftIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -13,210 +12,309 @@ const ArrowLeftIcon = () => (
   </svg>
 );
 
-const BlockContainer = ({ title, children, icon: Icon }: { title: string; children: React.ReactNode; icon: any }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6 }}
-    style={{
-      background: "rgba(255, 255, 255, 0.45)",
-      backdropFilter: "blur(12px)",
-      WebkitBackdropFilter: "blur(12px)",
-      padding: "2.5rem",
-      borderRadius: "2.5rem",
-      border: "1.5px solid rgba(180,120,60,0.12)",
-      marginBottom: "4rem",
-      boxShadow: "0 15px 45px rgba(160,82,45,0.04)"
-    }}
-  >
-    <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
-      <div style={{ color: "#C2440A", background: "rgba(194,68,10,0.1)", padding: "0.75rem", borderRadius: "1rem" }}>
-        <Icon size={24} />
-      </div>
-      <h2 style={{ margin: 0, fontSize: "1.75rem", fontWeight: 800, color: "#2C1A0E", fontFamily: "'Fraunces', serif" }}>
-        {title}
-      </h2>
-    </div>
-    {children}
-  </motion.div>
+const Label = ({ text }: { text: string }) => (
+  <div style={{ color: "rgb(176, 112, 64)", fontSize: "0.85rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.75rem" }}>
+    {text}
+  </div>
 );
 
-const ScriptCard = ({ title, script }: { title: string, script: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div style={{ 
-      marginBottom: "1rem", 
-      background: "rgba(44, 26, 14, 0.03)", 
-      borderRadius: "1rem", 
-      border: "1px solid rgba(44, 26, 14, 0.08)",
-      overflow: "hidden"
-    }}>
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        style={{
-          width: "100%", padding: "1rem 1.5rem", display: "flex", justifyContent: "space-between", 
-          alignItems: "center", background: "none", border: "none", cursor: "pointer",
-          textAlign: "left", color: "#2C1A0E", fontWeight: 700, fontSize: "0.9rem"
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <Mic size={16} color="#C2440A" />
-          <span>Guion: {title}</span>
-        </div>
-        {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            style={{ padding: "0 1.5rem 1.5rem", fontSize: "0.95rem", color: "#7A5035", lineHeight: 1.6, fontStyle: "italic" }}
-          >
-            "{script}"
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+const SectionTitle = ({ text }: { text: string }) => (
+  <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.8rem", color: "rgb(44, 26, 14)", fontWeight: 800, margin: "0 0 2rem 0", lineHeight: 1.2 }}>
+    {text}
+  </h2>
+);
 
 export default function MethodologyPage() {
   return (
     <div style={{
       position: "relative", width: "100%", minHeight: "100vh",
       display: "flex", alignItems: "flex-start", justifyContent: "center",
-      padding: "4rem 1.5rem", overflow: "hidden",
       fontFamily: "'DM Sans', sans-serif",
+      backgroundColor: "#fcf7f1",
     }}>
       <OrganicBackground />
 
       <div style={{
         position: "relative", zIndex: 2,
-        width: "100%", maxWidth: "900px", margin: "0 auto",
+        width: "100%", maxWidth: "1250px", margin: "0 auto",
+        padding: "0 2rem"
       }}>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
 
-        {/* Navigation */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "4rem" }}>
-          <Link href="/presentacion" style={{
-            display: "inline-flex", alignItems: "center", gap: "0.5rem",
-            color: "#B07040", fontSize: "0.8rem", fontWeight: 700,
-            letterSpacing: "0.1em", textTransform: "uppercase",
-            textDecoration: "none", transition: "all 0.3s ease",
-          }} className="group hover:text-[#C2440A] hover:translate-x-[-4px]">
-            <ArrowLeftIcon />
-            <span>Volver a Presentación</span>
-          </Link>
-        </div>
+          {/* LEFT COLUMN: FIXED CONTEXT */}
+          <div className="md:sticky md:top-[10vh] md:h-[80vh] flex flex-col justify-center py-12">
+            <Link href="/presentacion" style={{
+              display: "inline-flex", alignItems: "center", gap: "0.5rem",
+              color: "rgb(176, 112, 64)", fontSize: "0.8rem", fontWeight: 700,
+              letterSpacing: "0.1em", textTransform: "uppercase",
+              textDecoration: "none", marginBottom: "3rem",
+            }} className="group hover:text-[#c2440a] hover:translate-x-[-4px] transition-all">
+              <ArrowLeftIcon />
+              <span>Volver a Presentación</span>
+            </Link>
 
-        {/* Hero */}
-        <div style={{ marginBottom: "6rem" }}>
-          <h1 style={{
-            margin: "0 0 1.5rem",
-            fontSize: "clamp(3rem, 8vw, 5rem)",
-            fontWeight: 800,
-            letterSpacing: "-0.05em",
-            fontFamily: "'Fraunces', serif",
-            color: "#2C1A0E",
-            lineHeight: 1.05
-          }}>
-            Gestión & <br />
-            <span style={{ fontStyle: "italic", color: "#C2440A" }}>Metodología Ágil</span>
-          </h1>
-          <p style={{ fontSize: "1.3rem", color: "#7A5035", maxWidth: "42rem", lineHeight: 1.6 }}>
-            El éxito de Menú Bytes no solo reside en el código, sino en un proceso disciplinado de entrega de valor continua.
-          </p>
-        </div>
-
-        {/* BLOQUE 1: SCRUM ADAPTADO */}
-        <BlockContainer title="1. Ciclo de Vida: SCRUM Adaptado" icon={GitFork}>
-          <div style={{ marginBottom: "2.5rem" }}>
-            <p style={{ color: "#7A5035", fontSize: "1.1rem", lineHeight: 1.8 }}>
-              Trabajamos en **Sprints de 2 semanas**, asegurando que el feedback del usuario 
-              sea incorporado rápidamente en el desarrollo.
+            <h1 style={{
+              margin: "0 0 1.5rem",
+              fontSize: "clamp(2.5rem, 5vw, 4rem)",
+              fontWeight: 800,
+              letterSpacing: "-0.05em",
+              fontFamily: "'Fraunces', serif",
+              color: "rgb(44, 26, 14)",
+              lineHeight: 1.05
+            }}>
+              Gestión & <br />
+              <span style={{ fontStyle: "italic", color: "#c2440a" }}>Metodología Ágil</span>
+            </h1>
+            <p style={{ fontSize: "1.2rem", color: "rgb(122, 80, 53)", maxWidth: "30rem", lineHeight: 1.6 }}>
+              El éxito de Menú Bytes no solo reside en el código, sino en un proceso disciplinado de entrega de valor continua.
             </p>
-          </div>
-          
-          <div style={{ background: "white", padding: "1.5rem", borderRadius: "2rem", border: "1px solid rgba(180,120,60,0.1)", marginBottom: "2rem" }}>
-            <img src="/metodologia-agil.svg" alt="Ciclo Ágil" style={{ width: "100%", height: "auto" }} />
-          </div>
 
-          <ScriptCard 
-            title="Marco de Trabajo" 
-            script="Trabajamos en ciclos iterativos de 2 semanas. Esto nos permitió pivotar rápido cuando descubrimos que las latencias operativas eran el mayor cuello de botella para las PYMEs gastronómicas."
-          />
-        </BlockContainer>
-
-        {/* BLOQUE 2: CALIDAD & TDD */}
-        <BlockContainer title="2. Cultura de Calidad (QA)" icon={ClipboardCheck}>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", marginBottom: "2.5rem" }}>
-            <div style={{ flex: "1 1 300px" }}>
-              <p style={{ color: "#7A5035", fontSize: "1.05rem", lineHeight: 1.7 }}>
-                Aplicamos **TDD (Test Driven Development)** en módulos críticos de facturación y seguridad, 
-                garantizando que el sistema sea resistente a fallos.
+            <div style={{ marginTop: "3rem", opacity: 0.5 }}>
+              <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 800 }}>
+                Eje de Planificación · TPY1101 · 2026
               </p>
             </div>
-            <div style={{ flex: "1 1 200px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
-              {['TDD', 'Unit Tests', 'E2E', 'Linting'].map(t => (
-                <div key={t} style={{ padding: "0.5rem", border: "1px solid rgba(194,68,10,0.2)", borderRadius: "0.5rem", textAlign: "center", fontSize: "0.8rem", color: "#C2440A", fontWeight: 700 }}>{t}</div>
-              ))}
-            </div>
           </div>
-          <ScriptCard 
-            title="Control de Calidad" 
-            script="No entregamos nada sin validar. Aplicamos TDD en los módulos críticos de facturación para asegurar que cada comanda y pago esté siempre bien cuadrado, protegiendo el negocio del cliente."
-          />
-        </BlockContainer>
 
-        {/* BLOQUE 3: PLANIFICACIÓN 16 SEMANAS */}
-        <BlockContainer title="3. Cronograma de Impacto" icon={Calendar}>
-          <div style={{ position: "relative", paddingLeft: "2rem", borderLeft: "2px solid #C2440A", marginBottom: "2.5rem" }}>
-            <div style={{ marginBottom: "1.5rem" }}>
-              <h4 style={{ color: "#C2440A", fontSize: "1rem", fontWeight: 800, marginBottom: "0.5rem" }}>Fase 1: Fundación (Semanas 1-4)</h4>
-              <p style={{ color: "#7A5035", fontSize: "0.95rem" }}>Arquitectura, Base de Datos y Auth Multi-tenant.</p>
-            </div>
-            <div style={{ marginBottom: "1.5rem" }}>
-              <h4 style={{ color: "#C2440A", fontSize: "1rem", fontWeight: 800, marginBottom: "0.5rem" }}>Fase 2: Core Biz (Semanas 5-12)</h4>
-              <p style={{ color: "#7A5035", fontSize: "0.95rem" }}>Gestión de Comandas, Motor Realtime y App Móvil.</p>
-            </div>
-            <div style={{ marginBottom: "0" }}>
-              <h4 style={{ color: "#C2440A", fontSize: "1rem", fontWeight: 800, marginBottom: "0.5rem" }}>Fase 3: Integración & Lanzamiento (Semanas 13-16)</h4>
-              <p style={{ color: "#7A5035", fontSize: "0.95rem" }}>Facturación Electrónica y Despliegue en Producción.</p>
-            </div>
-          </div>
-          <ScriptCard 
-            title="Roadmap" 
-            script="Estamos en la fase final de un desarrollo de 16 semanas. Los próximos pasos incluyen la integración de pagos y el despliegue a una red masiva de locales en la región, marcando el inicio de la escalabilidad."
-          />
-        </BlockContainer>
+          {/* RIGHT COLUMN: STICKY STACK */}
+          <ContainerScroll className="min-h-[500vh] py-24 space-y-[20vh]">
 
-        {/* BLOQUE 4: CIERRE INSTITUCIONAL */}
-        <BlockContainer title="4. Conclusión & Futuro" icon={Rocket}>
-          <div style={{ textAlign: "center", padding: "2rem" }}>
-            <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: "2rem", color: "#2C1A0E", marginBottom: "1.5rem" }}>"Digitalizando el sabor, <br />automatizando el éxito."</h3>
-            <p style={{ color: "#7A5035", fontSize: "1.1rem", maxWidth: "30rem", margin: "0 auto 2rem" }}>
-              Menú Bytes no es solo software, es la transformación digital de las pequeñas y medianas empresas gastronómicas.
-            </p>
-            <Link href="/presentacion" style={{
-              display: "inline-block", background: "#C2440A", color: "white", padding: "1rem 2.5rem", borderRadius: "100px", textDecoration: "none", fontWeight: 700, transition: "transform 0.3s ease"
-            }} className="hover:scale-105 active:scale-95">
-              Finalizar Presentación
-            </Link>
-          </div>
-          <ScriptCard 
-            title="Cierre" 
-            script="Menú Bytes es más que código; es la transformación digital de las PYMEs. Estamos listos para llevar la eficiencia de las grandes cadenas a cada restaurante de barrio. Gracias."
-          />
-        </BlockContainer>
+            {/* CARD 01 - CRONOGRAMA */}
+            <CardSticky index={0} incrementY={60} incrementZ={0} className="w-full" style={{ top: `calc(10vh + 0px)` }}>
+              <div style={{
+                background: "rgba(255, 255, 255, 0.85)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                padding: "3rem",
+                borderRadius: "2.5rem",
+                border: "1.5px solid rgba(180,120,60,0.15)",
+                boxShadow: "0 25px 50px rgba(160,82,45,0.08)",
+                minHeight: "55vh",
+                display: "flex",
+                flexDirection: "column",
+                backgroundColor: "rgba(194, 68, 10, 0.05)"
+              }}>
+                <Label text="01 — CRONOGRAMA DE IMPACTO" />
+                <SectionTitle text="Estructura de Fases (16 Semanas)" />
+                
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.25rem" }}>
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.5rem" }}>
+                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, marginBottom: "0.75rem" }}>INICIO (W1 - W3)</h3>
+                    <ul style={{ color: "rgb(122, 80, 53)", fontSize: "0.95rem", lineHeight: 1.5, paddingLeft: "1.2rem", margin: 0 }}>
+                      <li style={{ marginBottom: "0.5rem" }}>SAD & Requisitos</li>
+                      <li style={{ marginBottom: "0.5rem" }}>Esquema BD</li>
+                      <li>Design System</li>
+                    </ul>
+                  </div>
 
-        {/* Footer info */}
-        <div style={{ marginTop: "6rem", textAlign: "center", opacity: 0.6 }}>
-          <p style={{ color: "#7A5035", fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 700 }}>
-            Eje de Planificación · TPY1101 · 2026
-          </p>
+                  <div style={{ background: "rgba(194,68,10,0.06)", border: "1px solid #c2440a", boxShadow: "0 15px 35px rgba(194,68,10,0.12)", borderRadius: "1rem", padding: "1.5rem" }}>
+                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.75rem 0" }}>DESARROLLO (W4 - W12)</h3>
+                    <div style={{ display: "inline-block", background: "rgba(194,68,10,0.12)", color: "#c2440a", border: "1px solid rgba(194,68,10,0.3)", padding: "0.25rem 0.5rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "1rem" }}>
+                      ★ HITO 1 (W4): Flujo Core
+                    </div>
+                    <ul style={{ color: "rgb(122, 80, 53)", fontSize: "0.95rem", lineHeight: 1.5, paddingLeft: "1.2rem", margin: 0 }}>
+                      <li style={{ marginBottom: "0.5rem" }}>Edge & Realtime (Hector)</li>
+                      <li style={{ marginBottom: "0.5rem" }}>UI Next.js (Alejandro)</li>
+                      <li>Monorepo (Jose Luis)</li>
+                    </ul>
+                  </div>
+
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.5rem" }}>
+                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, marginBottom: "0.75rem" }}>CIERRE (W13 - W16)</h3>
+                    <ul style={{ color: "rgb(122, 80, 53)", fontSize: "0.95rem", lineHeight: 1.5, paddingLeft: "1.2rem", margin: 0 }}>
+                      <li style={{ marginBottom: "0.5rem" }}>QA & Stress</li>
+                      <li style={{ marginBottom: "0.5rem" }}>Hardening (RLS)</li>
+                      <li>Entrega Final</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </CardSticky>
+
+            {/* CARD 02 - GANTT */}
+            <CardSticky index={1} incrementY={60} incrementZ={0} className="w-full" style={{ top: `calc(10vh + 30px)` }}>
+              <div style={{
+                background: "rgba(255, 255, 255, 0.85)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                padding: "3rem",
+                borderRadius: "2.5rem",
+                border: "1.5px solid rgba(180,120,60,0.15)",
+                boxShadow: "0 25px 50px rgba(160,82,45,0.08)",
+                minHeight: "55vh",
+                display: "flex",
+                flexDirection: "column",
+                backgroundColor: "rgba(31, 56, 100, 0.05)"
+              }}>
+                <Label text="02 — CARTA GANTT EN VIVO" />
+                <SectionTitle text="Roadmap Semanal — Vista Notion" />
+
+                <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", overflow: "hidden", marginTop: "1rem" }}>
+                  <div style={{ padding: "1rem", borderBottom: "1px solid rgba(44, 26, 14, 0.10)", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                    <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#c2440a" }} />
+                    <span style={{ color: "rgb(122, 80, 53)", fontSize: "0.8rem", fontWeight: 600 }}>Gantt DUOC · Roadmap 16 Semanas · Tiempo Real</span>
+                  </div>
+                  
+                  <img 
+                    src="/gantt.png" 
+                    alt="Carta Gantt Menu Bytes" 
+                    style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }} 
+                  />
+                  <div style={{ padding: "0.75rem 1rem", background: "rgba(44, 26, 14, 0.02)", borderTop: "1px solid rgba(44, 26, 14, 0.10)", color: "rgb(176, 112, 64)", fontSize: "0.7rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                    Carta Gantt · TPY1101 · 2026
+                  </div>
+                </div>
+              </div>
+            </CardSticky>
+
+            {/* CARD 03 - INTEGRANTES */}
+            <CardSticky index={2} incrementY={60} incrementZ={0} className="w-full" style={{ top: `calc(10vh + 60px)` }}>
+              <div style={{
+                background: "rgba(255, 255, 255, 0.85)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                padding: "3rem",
+                borderRadius: "2.5rem",
+                border: "1.5px solid rgba(180,120,60,0.15)",
+                boxShadow: "0 25px 50px rgba(160,82,45,0.08)",
+                minHeight: "55vh",
+                display: "flex",
+                flexDirection: "column",
+                backgroundColor: "rgba(124, 58, 237, 0.05)"
+              }}>
+                <Label text="03 — INTEGRANTES" />
+                <SectionTitle text="Asignación de Roles por Objetivo" />
+
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem", marginBottom: "1.5rem" }}>
+                  {/* Card JL */}
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.25rem" }}>
+                    <div style={{ display: "inline-block", background: "rgba(59,130,246,0.1)", color: "#2563eb", padding: "0.2rem 0.6rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
+                      MONOREPO & ORQ.
+                    </div>
+                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.25rem 0" }}>Jose Luis Medina</h3>
+                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.4 }}>Arquitecto / Líder · Integración</p>
+                  </div>
+
+                  {/* Card Hector */}
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.25rem" }}>
+                    <div style={{ display: "inline-block", background: "rgba(194,68,10,0.12)", color: "#c2440a", padding: "0.2rem 0.6rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
+                      RLS & EDGE FUNC.
+                    </div>
+                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.25rem 0" }}>Hector Robledo</h3>
+                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.4 }}>Backend / Seguridad</p>
+                  </div>
+
+                  {/* Card Alejandro */}
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.25rem" }}>
+                    <div style={{ display: "inline-block", background: "rgba(124,58,237,0.1)", color: "#7c3aed", padding: "0.2rem 0.6rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
+                      DESIGN SYSTEM
+                    </div>
+                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.25rem 0" }}>A. Placencia</h3>
+                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.4 }}>UX/UI Lead · Interfaces Web/App</p>
+                  </div>
+                </div>
+
+                <div style={{ borderLeft: "3px solid #c2440a", background: "rgba(194,68,10,0.06)", padding: "1.25rem 1.5rem", borderRadius: "0 1rem 1rem 0" }}>
+                  <p style={{ color: "rgb(44, 26, 14)", fontSize: "0.95rem", fontStyle: "italic", margin: 0, lineHeight: 1.5 }}>
+                    "Cada rol elimina dependencias: mientras Hector consolida la capa de datos, Alejandro construye las interfaces y Jose Luis garantiza la coherencia arquitectónica."
+                  </p>
+                </div>
+              </div>
+            </CardSticky>
+
+            {/* CARD 04 - CICLO DE VIDA */}
+            <CardSticky index={3} incrementY={60} incrementZ={0} className="w-full" style={{ top: `calc(10vh + 90px)` }}>
+              <div style={{
+                background: "rgba(255, 255, 255, 0.85)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                padding: "3rem",
+                borderRadius: "2.5rem",
+                border: "1.5px solid rgba(180,120,60,0.15)",
+                boxShadow: "0 25px 50px rgba(160,82,45,0.08)",
+                minHeight: "45vh",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                backgroundColor: "rgba(31, 122, 69, 0.05)"
+              }}>
+                <Label text="04 — CICLO DE VIDA" />
+                <SectionTitle text="SCRUM Adaptado: Entrega Continua" />
+                
+                <p style={{ fontSize: "1.1rem", color: "rgb(122, 80, 53)", lineHeight: 1.7, maxWidth: "100%" }}>
+                  Trabajamos en <strong style={{ color: "rgb(44, 26, 14)" }}>Sprints semanales</strong>, asegurando que el feedback sea incorporado rápidamente. La elección Ágil sobre cascada responde a la necesidad de validar el <strong style={{ color: "#c2440a" }}>Hito 1 (W4)</strong> con el flujo operativo completo funcionando. Solo Ágil garantiza ese punto de control temprano con un equipo de 3 personas y un plazo hermético.
+                </p>
+              </div>
+            </CardSticky>
+
+            {/* CARD 05 - COHERENCIA TÉCNICA */}
+            <CardSticky index={4} incrementY={60} incrementZ={0} className="w-full" style={{ top: `calc(10vh + 120px)` }}>
+              <div style={{
+                background: "rgba(255, 255, 255, 0.85)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                padding: "3rem",
+                borderRadius: "2.5rem",
+                border: "1.5px solid rgba(180,120,60,0.15)",
+                boxShadow: "0 25px 50px rgba(160,82,45,0.08)",
+                minHeight: "55vh",
+                display: "flex",
+                flexDirection: "column",
+                backgroundColor: "rgba(31, 122, 69, 0.05)"
+              }}>
+                <Label text="05 — COHERENCIA TÉCNICA" />
+                <SectionTitle text="Stack Proporcional al Problema" />
+
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem", marginBottom: "2rem" }}>
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.5rem" }}>
+                    <div style={{ display: "inline-block", background: "rgba(194,68,10,0.12)", color: "#c2440a", padding: "0.2rem 0.6rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
+                      EFICIENCIA
+                    </div>
+                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.5rem 0" }}>Supabase</h3>
+                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.5 }}>
+                      Delegamos infraestructura al motor administrado. El 100% va a la lógica.
+                    </p>
+                  </div>
+
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.5rem" }}>
+                    <div style={{ display: "inline-block", background: "rgba(194,68,10,0.12)", color: "#c2440a", padding: "0.2rem 0.6rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
+                      MONOREPO
+                    </div>
+                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.5rem 0" }}>Turborepo</h3>
+                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.5 }}>
+                      3 apps comparten fuente de verdad. Cero inconsistencias paralelas.
+                    </p>
+                  </div>
+
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(44, 26, 14, 0.10)", borderRadius: "1rem", padding: "1.5rem" }}>
+                    <div style={{ display: "inline-block", background: "rgba(194,68,10,0.12)", color: "#c2440a", padding: "0.2rem 0.6rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
+                      SEGURIDAD
+                    </div>
+                    <h3 style={{ color: "rgb(44, 26, 14)", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.5rem 0" }}>Postgres RLS</h3>
+                    <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.85rem", margin: 0, lineHeight: 1.5 }}>
+                      Aislamiento a nivel de fila (Row Level Security) multi-tenant nativo.
+                    </p>
+                  </div>
+                </div>
+
+                <div style={{ borderLeft: "3px solid #c2440a", background: "rgba(194,68,10,0.06)", padding: "1.5rem", borderRadius: "0 1rem 1rem 0" }}>
+                  <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.4rem", color: "rgb(44, 26, 14)", margin: "0 0 0.5rem 0", lineHeight: 1.2 }}>
+                    "Digitalizando el sabor, automatizando el éxito."
+                  </h3>
+                  <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.95rem", margin: 0, lineHeight: 1.5 }}>
+                    La metodología Ágil y el stack son la respuesta proporcional al plazo hermético de 16 semanas.
+                  </p>
+                </div>
+              </div>
+            </CardSticky>
+
+            {/* Spacer for final card visibility */}
+            <div className="h-[20vh]" />
+
+
+          </ContainerScroll>
         </div>
-
       </div>
     </div>
   );
