@@ -7,9 +7,9 @@ import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
-  CarouselApi,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 
 export interface Gallery4Item {
@@ -45,38 +45,11 @@ const data = [
     image:
       "https://images.unsplash.com/photo-1551250928-e4a05afaed1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjR8fHx8fHwyfHwxNzIzODA2OTM5fA&ixlib=rb-4.0.3&q=80&w=1080",
   },
-  {
-    id: "astro",
-    title: "Astro: The All-in-One Web Framework",
-    description:
-      "Learn how Astro's innovative 'Islands Architecture' and zero-JS-by-default approach is helping developers build faster websites while maintaining rich interactivity where needed.",
-    href: "https://astro.build",
-    image:
-      "https://images.unsplash.com/photo-1536735561749-fc87494598cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxNzd8fHx8fHwyfHwxNzIzNjM0NDc0fA&ixlib=rb-4.0.3&q=80&w=1080",
-  },
-  {
-    id: "react",
-    title: "React: Pioneering Component-Based UI",
-    description:
-      "See how React continues to shape modern web development with its component-based architecture, enabling developers to build complex user interfaces with reusable, maintainable code.",
-    href: "https://react.dev",
-    image:
-      "https://images.unsplash.com/photo-1548324215-9133768e4094?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMzF8fHx8fHwyfHwxNzIzNDM1MzA1fA&ixlib=rb-4.0.3&q=80&w=1080",
-  },
-  {
-    id: "nextjs",
-    title: "Next.js: The React Framework for Production",
-    description:
-      "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
-    href: "https://nextjs.org",
-    image:
-      "https://images.unsplash.com/photo-1550070881-a5d71eda5800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjV8fHx8fHwyfHwxNzIzNDM1Mjk4fA&ixlib=rb-4.0.3&q=80&w=1080",
-  },
 ];
 
 const Gallery4 = ({
-  title = "Case Studies",
-  description = "Discover how leading companies and developers are leveraging modern web technologies to build exceptional digital experiences. These case studies showcase real-world applications and success stories.",
+  title = "Prototipos Vivos",
+  description = "Discover how leading companies and developers are leveraging modern web technologies to build exceptional digital experiences.",
   items = data,
 }: Gallery4Props) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
@@ -105,10 +78,10 @@ const Gallery4 = ({
       <div className="container mx-auto">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-4">
-            <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-black md:text-4xl lg:text-5xl text-white tracking-tight font-sans">
               {title}
             </h2>
-            <p className="max-w-lg text-muted-foreground">{description}</p>
+            <p className="max-w-lg text-slate-400 font-sans text-sm font-medium">{description}</p>
           </div>
           <div className="hidden shrink-0 gap-2 md:flex">
             <Button
@@ -118,9 +91,9 @@ const Gallery4 = ({
                 carouselApi?.scrollPrev();
               }}
               disabled={!canScrollPrev}
-              className="rounded-full border-black text-black hover:bg-black hover:text-white disabled:opacity-30"
+              className="rounded-full border-white/10 text-white bg-white/5 hover:bg-white/10 hover:border-emerald-500/20 disabled:opacity-30 w-12 h-12 flex items-center justify-center transition-all"
             >
-              <ArrowLeft className="size-6" />
+              <ArrowLeft className="size-5 text-emerald-400" />
             </Button>
             <Button
               size="icon"
@@ -129,9 +102,9 @@ const Gallery4 = ({
                 carouselApi?.scrollNext();
               }}
               disabled={!canScrollNext}
-              className="rounded-full border-black text-black hover:bg-black hover:text-white disabled:opacity-30"
+              className="rounded-full border-white/10 text-white bg-white/5 hover:bg-white/10 hover:border-emerald-500/20 disabled:opacity-30 w-12 h-12 flex items-center justify-center transition-all"
             >
-              <ArrowRight className="size-6" />
+              <ArrowRight className="size-5 text-emerald-400" />
             </Button>
           </div>
         </div>
@@ -159,23 +132,23 @@ const Gallery4 = ({
                 key={item.id}
                 className="max-w-[320px] pl-[20px] lg:max-w-[380px]"
               >
-                <a href={item.href} className="group block h-full overflow-hidden rounded-2xl border-[1.5px] border-black/5 bg-[#FCF7F1]/80 shadow-md backdrop-blur-md transition-all hover:border-[#C2440A]/30 hover:bg-[#FCF7F1] hover:shadow-2xl">
-                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-stone-100">
+                <a href={item.href} className="group block h-full overflow-hidden rounded-[2.2rem] border border-white/5 bg-slate-950/40 backdrop-blur-xl shadow-xl transition-all duration-500 hover:border-emerald-500/20 hover:bg-slate-950/60 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/5">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-900 border-b border-white/5">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-102"
                     />
                   </div>
-                  <div className="flex flex-col p-6 md:p-7">
-                    <h3 className="mb-2 text-xl font-bold tracking-tight" style={{ color: "#2C1A0E", fontFamily: "'Fraunces', serif" }}>
+                  <div className="flex flex-col p-6 md:p-7 text-left space-y-3">
+                    <h3 className="text-xl font-black tracking-tight text-white font-sans">
                       {item.title}
                     </h3>
-                    <p className="mb-6 line-clamp-3 text-[0.9rem] leading-relaxed" style={{ color: "#7A4F35", fontFamily: "'DM Sans', sans-serif" }}>
+                    <p className="line-clamp-3 text-[13px] leading-relaxed text-slate-400 font-sans font-medium">
                       {item.description}
                     </p>
-                    <div className="mt-auto flex items-center text-[0.7rem] font-bold uppercase tracking-[0.12em]" style={{ color: "#C2440A", fontFamily: "'DM Sans', sans-serif" }}>
-                      Ver prototipo
+                    <div className="pt-2 mt-auto flex items-center text-[10px] font-black uppercase tracking-[0.15em] text-emerald-400 font-sans">
+                      Ver prototipo interactivo
                       <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
@@ -188,7 +161,7 @@ const Gallery4 = ({
           {items.map((_, index) => (
             <button
               key={index}
-              className={`h-2.5 w-2.5 rounded-full transition-all ${currentSlide === index ? "bg-black w-6" : "bg-black/20"
+              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${currentSlide === index ? "bg-emerald-500 w-6" : "bg-slate-800"
                 }`}
               onClick={() => carouselApi?.scrollTo(index)}
               aria-label={`Go to slide ${index + 1}`}

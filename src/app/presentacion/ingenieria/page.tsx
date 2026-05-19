@@ -13,7 +13,7 @@ const ArrowLeftIcon = () => (
 );
 
 const SectionTitle = ({ text }: { text: string }) => (
-  <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.8rem", color: "rgb(44, 26, 14)", fontWeight: 800, margin: "0 0 1rem 0", lineHeight: 1.2 }}>
+  <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.8rem", color: "#fafaf9", fontWeight: 800, margin: "0 0 1rem 0", lineHeight: 1.2 }}>
     {text}
   </h2>
 );
@@ -32,7 +32,7 @@ const ReactLogo = () => (
 
 const NextJsLogo = () => (
   <svg viewBox="0 0 180 180" width="45" height="45">
-    <circle cx="90" cy="90" r="90" fill="#000"/>
+    <circle cx="90" cy="90" r="90" fill="#000" stroke="rgba(255,255,255,0.1)" strokeWidth="4"/>
     <path d="M149.508 157.52L69.142 54H54v71.97h12.114V69.384l73.885 96.439c3.96-2.5 7.657-5.32 11.076-8.304l-1.567-1.503z" fill="#fff"/>
     <path d="M115 54h12v72h-12z" fill="#fff"/>
   </svg>
@@ -45,7 +45,7 @@ const SupabaseLogo = () => (
 );
 
 const VercelLogo = () => (
-  <svg viewBox="0 0 24 24" width="45" height="45" fill="#000">
+  <svg viewBox="0 0 24 24" width="45" height="45" fill="#fff">
     <path d="M24 22.525H0l12-21.05 12 21.05z"/>
   </svg>
 );
@@ -62,8 +62,7 @@ export default function EngineeringPage() {
     <div style={{
       position: "relative", width: "100%", minHeight: "100vh",
       display: "flex", alignItems: "flex-start", justifyContent: "center",
-      fontFamily: "'DM Sans', sans-serif",
-      backgroundColor: "#fcf7f1",
+      fontFamily: "'Outfit', sans-serif",
     }}>
       <OrganicBackground />
 
@@ -79,10 +78,10 @@ export default function EngineeringPage() {
           <div className="md:sticky md:top-[10vh] md:h-[80vh] flex flex-col justify-center py-12">
             <Link href="/presentacion" style={{
               display: "inline-flex", alignItems: "center", gap: "0.5rem",
-              color: "rgb(176, 112, 64)", fontSize: "0.8rem", fontWeight: 700,
+              color: "rgb(116, 163, 135)", fontSize: "0.8rem", fontWeight: 700,
               letterSpacing: "0.1em", textTransform: "uppercase",
               textDecoration: "none", marginBottom: "3rem",
-            }} className="group hover:text-[#c2440a] hover:translate-x-[-4px] transition-all">
+            }} className="group hover:text-[#10B981] hover:translate-x-[-4px] transition-all">
               <ArrowLeftIcon />
               <span>Volver a Presentación</span>
             </Link>
@@ -93,41 +92,41 @@ export default function EngineeringPage() {
               fontWeight: 800,
               letterSpacing: "-0.05em",
               fontFamily: "'Fraunces', serif",
-              color: "rgb(44, 26, 14)",
+              color: "#fafaf9",
               lineHeight: 1.05
             }}>
               Ingeniería <br />
-              <span style={{ fontStyle: "italic", color: "#c2440a" }}>Avanzada</span>
+              <span style={{ fontStyle: "italic", color: "#10B981" }}>Avanzada</span>
             </h1>
-            <p style={{ fontSize: "1.2rem", color: "rgb(122, 80, 53)", maxWidth: "30rem", lineHeight: 1.6 }}>
+            <p style={{ fontSize: "1.2rem", color: "#94a3b8", maxWidth: "30rem", lineHeight: 1.6 }}>
               Arquitectura unificada, serverless y basada en el paradigma de BaaS para garantizar estabilidad frente a alta demanda gastronómica.
             </p>
 
-            <div style={{ marginTop: "3rem", opacity: 0.5 }}>
-              <p style={{ color: "rgb(122, 80, 53)", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 800 }}>
+            <div style={{ marginTop: "3rem", opacity: 0.4 }}>
+              <p style={{ color: "#94a3b8", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 800 }}>
                 Eje de Software · Menú Bytes · 2026
               </p>
             </div>
           </div>
 
-          {/* RIGHT COLUMN: STICKY STACK CON GLASMORFISMO */}
+          {/* RIGHT COLUMN: STICKY STACK */}
           <ContainerScroll className="min-h-[400vh] py-24 space-y-[20vh]">
 
             {/* CARD 01 - REACT NATIVE + NEXTJS */}
             <CardSticky index={0} incrementY={60} incrementZ={0} className="w-full" style={{ top: `calc(10vh + 0px)` }}>
               <div style={{
-                background: "rgba(255, 255, 255, 0.85)",
+                background: "rgba(15, 23, 42, 0.45)",
                 backdropFilter: "blur(20px)",
                 WebkitBackdropFilter: "blur(20px)",
                 padding: "3rem",
                 borderRadius: "2.5rem",
-                border: "1.5px solid rgba(180,120,60,0.15)",
-                boxShadow: "0 25px 50px rgba(160,82,45,0.08)",
+                border: "1.5px solid rgba(255, 255, 255, 0.05)",
+                boxShadow: "0 25px 50px rgba(0,0,0,0.3)",
                 minHeight: "55vh",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                backgroundColor: "rgba(46, 95, 163, 0.05)"
+                backgroundColor: "rgba(16, 185, 129, 0.03)"
               }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: "2rem" }}>
                   <ReactLogo />
@@ -136,20 +135,20 @@ export default function EngineeringPage() {
                 
                 <SectionTitle text="1. Ecosistema Full-Stack Omnicanal" />
                 
-                <p style={{ fontSize: "1.1rem", color: "rgb(122, 80, 53)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-                  La omnicanalidad de Menú Bytes exige coherencia absoluta. Adoptamos un stack unificado en <strong style={{ color: "rgb(44, 26, 14)" }}>TypeScript</strong> que nos permite erradicar la duplicación de esfuerzos, compartiendo lógica de negocio y validaciones entre nuestras distintas plataformas operativas.
+                <p style={{ fontSize: "1.1rem", color: "#94a3b8", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+                  La omnicanalidad de Menú Bytes exige coherencia absoluta. Adoptamos un stack unificado en <strong style={{ color: "#fafaf9" }}>TypeScript</strong> que nos permite erradicar la duplicación de esfuerzos, compartiendo lógica de negocio y validaciones entre nuestras distintas plataformas operativas.
                 </p>
 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginTop: "0.5rem" }}>
-                  <div style={{ background: "rgba(255, 255, 255, 0.5)", border: "1px solid rgba(0, 0, 0, 0.1)", borderRadius: "1rem", padding: "1.5rem" }}>
-                    <h4 style={{ margin: "0 0 0.75rem 0", color: "#000", fontWeight: 800, fontSize: "1.1rem" }}>Next.js 14</h4>
-                    <p style={{ margin: 0, fontSize: "0.9rem", color: "rgb(122, 80, 53)", lineHeight: 1.6 }}>
+                  <div style={{ background: "rgba(15, 23, 42, 0.35)", border: "1px solid rgba(255, 255, 255, 0.05)", borderRadius: "1rem", padding: "1.5rem" }}>
+                    <h4 style={{ margin: "0 0 0.75rem 0", color: "#fafaf9", fontWeight: 800, fontSize: "1.1rem" }}>Next.js 16+</h4>
+                    <p style={{ margin: 0, fontSize: "0.9rem", color: "#94a3b8", lineHeight: 1.6 }}>
                       Impulsa el panel administrativo web y los menús QR de los clientes. Aprovechamos el <strong>SSR (Server-Side Rendering)</strong> de App Router para un SEO impecable en los menús, y un despacho de componentes ultrarápido.
                     </p>
                   </div>
-                  <div style={{ background: "rgba(97, 218, 251, 0.05)", border: "1px solid rgba(97, 218, 251, 0.3)", borderRadius: "1rem", padding: "1.5rem" }}>
-                    <h4 style={{ margin: "0 0 0.75rem 0", color: "#228eb6", fontWeight: 800, fontSize: "1.1rem" }}>React Native + Expo</h4>
-                    <p style={{ margin: 0, fontSize: "0.9rem", color: "rgb(122, 80, 53)", lineHeight: 1.6 }}>
+                  <div style={{ background: "rgba(16, 185, 129, 0.03)", border: "1px solid rgba(16, 185, 129, 0.15)", borderRadius: "1rem", padding: "1.5rem" }}>
+                    <h4 style={{ margin: "0 0 0.75rem 0", color: "#10B981", fontWeight: 800, fontSize: "1.1rem" }}>React Native + Expo</h4>
+                    <p style={{ margin: 0, fontSize: "0.9rem", color: "#94a3b8", lineHeight: 1.6 }}>
                       Provee a los garzones de una aplicación nativa que corre directamente en el hardware del móvil, asegurando fluidez en la toma de pedidos y capacidad nativa para escanear mesas/QR.
                     </p>
                   </div>
@@ -160,18 +159,18 @@ export default function EngineeringPage() {
             {/* CARD 02 - SUPABASE */}
             <CardSticky index={1} incrementY={60} incrementZ={0} className="w-full" style={{ top: `calc(10vh + 45px)` }}>
               <div style={{
-                background: "rgba(255, 255, 255, 0.85)",
+                background: "rgba(15, 23, 42, 0.45)",
                 backdropFilter: "blur(20px)",
                 WebkitBackdropFilter: "blur(20px)",
                 padding: "3rem",
                 borderRadius: "2.5rem",
-                border: "1.5px solid rgba(180,120,60,0.15)",
-                boxShadow: "0 25px 50px rgba(160,82,45,0.08)",
+                border: "1.5px solid rgba(255, 255, 255, 0.05)",
+                boxShadow: "0 25px 50px rgba(0,0,0,0.3)",
                 minHeight: "55vh",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                backgroundColor: "rgba(31, 122, 69, 0.05)"
+                backgroundColor: "rgba(16, 185, 129, 0.03)"
               }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
                   <SupabaseLogo />
@@ -180,18 +179,18 @@ export default function EngineeringPage() {
                 
                 <SectionTitle text="2. Motor BaaS & Seguridad RLS" />
                 
-                <p style={{ fontSize: "1.1rem", color: "rgb(122, 80, 53)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+                <p style={{ fontSize: "1.1rem", color: "#94a3b8", lineHeight: 1.7, marginBottom: "1.5rem" }}>
                   Delegamos el mantenimiento de la infraestructura backend profunda a <strong>Supabase</strong> (Backend-as-a-Service), obteniendo una persistencia gestionada sobre el motor robusto de <strong>PostgreSQL</strong>. Reemplazamos las debilidades de la API REST convencional por acceso directo blindado.
                 </p>
                 
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                  <div style={{ background: "rgba(62, 207, 142, 0.05)", borderLeft: "4px solid #3ECF8E", padding: "1rem 1.5rem", borderRadius: "0 1rem 1rem 0" }}>
-                    <h4 style={{ margin: "0 0 0.25rem 0", color: "rgb(44, 26, 14)", fontWeight: 800 }}>Aislamiento Multi-tenant (RLS)</h4>
-                    <p style={{ margin: 0, fontSize: "0.95rem", color: "rgb(122, 80, 53)", lineHeight: 1.5 }}>Las políticas a nivel de fila (Row Level Security) actúan como un firewall virtual directamente en la Base de Datos. La data del Restaurante A jamás podrá mutar con la del Restaurante B, garantizando privacidad criptográfica para los clientes.</p>
+                  <div style={{ background: "rgba(16, 185, 129, 0.03)", borderLeft: "4px solid #10B981", padding: "1rem 1.5rem", borderRadius: "0 1rem 1rem 0" }}>
+                    <h4 style={{ margin: "0 0 0.25rem 0", color: "#fafaf9", fontWeight: 800 }}>Aislamiento Multi-tenant (RLS)</h4>
+                    <p style={{ margin: 0, fontSize: "0.95rem", color: "#94a3b8", lineHeight: 1.5 }}>Las políticas a nivel de fila (Row Level Security) actúan como un firewall virtual directamente en la Base de Datos. La data del Restaurante A jamás podrá mutar con la del Restaurante B, garantizando privacidad criptográfica para los clientes.</p>
                   </div>
-                  <div style={{ background: "rgba(62, 207, 142, 0.05)", borderLeft: "4px solid #3ECF8E", padding: "1rem 1.5rem", borderRadius: "0 1rem 1rem 0" }}>
-                    <h4 style={{ margin: "0 0 0.25rem 0", color: "rgb(44, 26, 14)", fontWeight: 800 }}>Sincronización Realtime (WebSockets)</h4>
-                    <p style={{ margin: 0, fontSize: "0.95rem", color: "rgb(122, 80, 53)", lineHeight: 1.5 }}>Las comandas y actualizaciones de menú viajan a la cocina y a las cajas sin necesidad de que el usuario recargue (refresh). Esto reduce la latencia operativa a menos de <i>200ms</i>, emulando la velocidad de un POS físico.</p>
+                  <div style={{ background: "rgba(16, 185, 129, 0.03)", borderLeft: "4px solid #10B981", padding: "1rem 1.5rem", borderRadius: "0 1rem 1rem 0" }}>
+                    <h4 style={{ margin: "0 0 0.25rem 0", color: "#fafaf9", fontWeight: 800 }}>Sincronización Realtime (WebSockets)</h4>
+                    <p style={{ margin: 0, fontSize: "0.95rem", color: "#94a3b8", lineHeight: 1.5 }}>Las comandas y actualizaciones de menú viajan a la cocina y a las cajas sin necesidad de que el usuario recargue (refresh). Esto reduce la latencia operativa a menos de <i>200ms</i>, emulando la velocidad de un POS físico.</p>
                   </div>
                 </div>
               </div>
@@ -200,38 +199,38 @@ export default function EngineeringPage() {
             {/* CARD 03 - VERCEL */}
             <CardSticky index={2} incrementY={60} incrementZ={0} className="w-full" style={{ top: `calc(10vh + 90px)` }}>
               <div style={{
-                background: "rgba(255, 255, 255, 0.85)",
+                background: "rgba(15, 23, 42, 0.45)",
                 backdropFilter: "blur(20px)",
                 WebkitBackdropFilter: "blur(20px)",
                 padding: "3rem",
                 borderRadius: "2.5rem",
-                border: "1.5px solid rgba(180,120,60,0.15)",
-                boxShadow: "0 25px 50px rgba(160,82,45,0.08)",
+                border: "1.5px solid rgba(255, 255, 255, 0.05)",
+                boxShadow: "0 25px 50px rgba(0,0,0,0.3)",
                 minHeight: "55vh",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                backgroundColor: "rgba(31, 56, 100, 0.05)"
+                backgroundColor: "rgba(16, 185, 129, 0.03)"
               }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
                   <VercelLogo />
-                  <span style={{ fontSize: "1.8rem", fontWeight: 800, color: "#000", letterSpacing: "-0.05em" }}>Vercel</span>
+                  <span style={{ fontSize: "1.8rem", fontWeight: 800, color: "#fff", letterSpacing: "-0.05em" }}>Vercel</span>
                 </div>
                 
                 <SectionTitle text="3. Despliegue Cloud PaaS" />
                 
-                <p style={{ fontSize: "1.1rem", color: "rgb(122, 80, 53)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+                <p style={{ fontSize: "1.1rem", color: "#94a3b8", lineHeight: 1.7, marginBottom: "1.5rem" }}>
                   Una plataforma gastronómica moderna no puede darse el lujo de experimentar caídas ni lentitud en horas pico. <strong>Vercel</strong> provee una infraestructura descentralizada y Serverless que anula nuestra necesidad de gestionar contenedores o clústeres físicos.
                 </p>
                 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
-                  <div style={{ padding: "1rem", borderTop: "2px solid #000" }}>
-                    <h4 style={{ margin: "0 0 0.5rem 0", color: "#000", fontWeight: 800 }}>Global Edge CDN</h4>
-                    <p style={{ margin: 0, fontSize: "0.9rem", color: "rgb(122, 80, 53)", lineHeight: 1.6 }}>Los menús QR se distribuyen y cachean orgánicamente a través de la Red en los servidores globales más cercanos al celular del cliente, cargando en milisegundos.</p>
+                  <div style={{ padding: "1rem", borderTop: "2px solid #10B981" }}>
+                    <h4 style={{ margin: "0 0 0.5rem 0", color: "#fafaf9", fontWeight: 800 }}>Global Edge CDN</h4>
+                    <p style={{ margin: 0, fontSize: "0.9rem", color: "#94a3b8", lineHeight: 1.6 }}>Los menús QR se distribuyen y cachean orgánicamente a través de la Red en los servidores globales más cercanos al celular del cliente, cargando en milisegundos.</p>
                   </div>
-                  <div style={{ padding: "1rem", borderTop: "2px solid #000" }}>
-                    <h4 style={{ margin: "0 0 0.5rem 0", color: "#000", fontWeight: 800 }}>Escalabilidad Serverless</h4>
-                    <p style={{ margin: 0, fontSize: "0.9rem", color: "rgb(122, 80, 53)", lineHeight: 1.6 }}>Si hay 100 restaurantes colapsados de comandas un viernes por la noche, Vercel absorbe el impacto (auto-escalado iterativo) sin intervención humana ni configuraciones de balanceadores extra.</p>
+                  <div style={{ padding: "1rem", borderTop: "2px solid #10B981" }}>
+                    <h4 style={{ margin: "0 0 0.5rem 0", color: "#fafaf9", fontWeight: 800 }}>Escalabilidad Serverless</h4>
+                    <p style={{ margin: 0, fontSize: "0.9rem", color: "#94a3b8", lineHeight: 1.6 }}>Si hay 100 restaurantes colapsados de comandas un viernes por la noche, Vercel absorbe el impacto (auto-escalado iterativo) sin intervención humana ni configuraciones de balanceadores extra.</p>
                   </div>
                 </div>
               </div>
@@ -240,18 +239,18 @@ export default function EngineeringPage() {
             {/* CARD 04 - GITFLOW */}
             <CardSticky index={3} incrementY={60} incrementZ={0} className="w-full" style={{ top: `calc(10vh + 135px)` }}>
               <div style={{
-                background: "rgba(255, 255, 255, 0.85)",
+                background: "rgba(15, 23, 42, 0.45)",
                 backdropFilter: "blur(20px)",
                 WebkitBackdropFilter: "blur(20px)",
                 padding: "3rem",
                 borderRadius: "2.5rem",
-                border: "1.5px solid rgba(180,120,60,0.15)",
-                boxShadow: "0 25px 50px rgba(160,82,45,0.08)",
+                border: "1.5px solid rgba(255, 255, 255, 0.05)",
+                boxShadow: "0 25px 50px rgba(0,0,0,0.3)",
                 minHeight: "55vh",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                backgroundColor: "rgba(194, 68, 10, 0.05)"
+                backgroundColor: "rgba(16, 185, 129, 0.03)"
               }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
                   <GitLogo />
@@ -260,15 +259,15 @@ export default function EngineeringPage() {
                 
                 <SectionTitle text="4. Orquestación y Turborepo" />
                 
-                <p style={{ fontSize: "1.1rem", color: "rgb(122, 80, 53)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+                <p style={{ fontSize: "1.1rem", color: "#94a3b8", lineHeight: 1.7, marginBottom: "1.5rem" }}>
                   La calidad del producto final es proporcional a la disciplina estructural de los repositorios. Menú Bytes previene el "código espagueti" forjando el frontend en un entorno <strong>Monorepo</strong> y gestionando despliegues con GitFlow.
                 </p>
                 
-                <div style={{ background: "rgba(241, 80, 47, 0.05)", border: "1px solid rgba(241, 80, 47, 0.2)", borderRadius: "1.5rem", padding: "1.5rem" }}>
-                  <ul style={{ margin: 0, paddingLeft: "1.2rem", color: "rgb(44, 26, 14)", fontSize: "0.95rem", lineHeight: 1.7 }}>
-                    <li style={{ marginBottom: "0.5rem" }}><strong>Turborepo Workspaces:</strong> La app del Admin, la PWA del Garzón y el Menú Cliente residen en un mismo repositorio. Comparten tokens de diseño y utilidades TypeScript globales en un solo comando: <code>npm run dev</code>.</li>
-                    <li style={{ marginBottom: "0.5rem" }}><strong>Estrategia de Ramas Semánticas:</strong> Operamos bajo un esquema inquebrantable de separación (`main` como producción bloqueada, `dev` como testeo, y `feat/*` para ramas cortas efímeras).</li>
-                    <li><strong>Aprobación Gated (Code Review):</strong> Nadie altera producción de forma independiente o inadvertida. Toda fusión técnica exige la certificación de calidad (Pull Requests) para evitar regresiones lógicas antes de publicarse.</li>
+                <div style={{ background: "rgba(16, 185, 129, 0.03)", border: "1px solid rgba(16, 185, 129, 0.15)", borderRadius: "1.5rem", padding: "1.5rem" }}>
+                  <ul style={{ margin: 0, paddingLeft: "1.2rem", color: "#94a3b8", fontSize: "0.95rem", lineHeight: 1.7 }}>
+                    <li style={{ marginBottom: "0.5rem" }}><strong style={{ color: "#fafaf9" }}>Turborepo Workspaces:</strong> La app del Admin, la PWA del Garzón y el Menú Cliente residen en un mismo repositorio. Comparten tokens de diseño y utilidades TypeScript globales en un solo comando: <code>npm run dev</code>.</li>
+                    <li style={{ marginBottom: "0.5rem" }}><strong style={{ color: "#fafaf9" }}>Estrategia de Ramas Semánticas:</strong> Operamos bajo un esquema inquebrantable de separación (`main` como producción bloqueada, `dev` como testeo, y `feat/*` para ramas cortas efímeras).</li>
+                    <li><strong style={{ color: "#fafaf9" }}>Aprobación Gated (Code Review):</strong> Nadie altera producción de forma independiente o inadvertida. Toda fusión técnica exige la certificación de calidad (Pull Requests) para evitar regresiones lógicas antes de publicarse.</li>
                   </ul>
                 </div>
               </div>
