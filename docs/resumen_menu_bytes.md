@@ -23,7 +23,7 @@ El despliegue simultáneo de distintas entidades comerciales sobre una infraestr
 La implementación de Row Level Security (RLS) en PostgreSQL impone que los ingresos y listados de clientes de un restaurante resulten criptográficamente inaccesibles para el resto de los inquilinos. Las políticas de visualización evalúan en tiempo de ejecución los permisos codificados en tokens JWT nativos del sistema.
 
 ## 5. Tolerancia a Fallos y Metodología
-La ingeniería operacional sigue un ciclo de vida fundamentado en iteraciones tácticas de dos semanas continuas. El cronograma de desarrollo abarca un bloque de 16 semanas proyectadas hasta la culminación de la integración de comprobantes electrónicos fiscales.
+La ingeniería operacional sigue un ciclo de vida fundamentado en iteraciones tácticas de dos semanas continuas. El cronograma de desarrollo abarca un bloque de 18 semanas proyectadas hasta la culminación de la integración de comprobantes electrónicos fiscales.
 
 Para prevenir incongruencias financieras u órdenes perdidas, los módulos de procesamiento monetario se construyen exclusivamente bajo la doctrina Test Driven Development (TDD). La cobertura de código dictamina la viabilidad de despliegue antes de autorizar cualquier avance hacia los entornos de producción.
 

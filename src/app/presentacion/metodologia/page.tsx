@@ -95,7 +95,7 @@ export default function MethodologyPage() {
                 backgroundColor: "rgba(16, 185, 129, 0.03)"
               }}>
                 <Label text="01 — CRONOGRAMA DE IMPACTO" />
-                <SectionTitle text="Estructura de Fases (16 Semanas)" />
+                <SectionTitle text="Estructura de Fases (18 Semanas)" />
                 
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.25rem" }}>
                   <div style={{ background: "rgba(15, 23, 42, 0.35)", border: "1px solid rgba(255, 255, 255, 0.05)", borderRadius: "1rem", padding: "1.5rem" }}>
@@ -107,7 +107,10 @@ export default function MethodologyPage() {
                     </ul>
                   </div>
 
-                  <div style={{ background: "rgba(16, 185, 129, 0.03)", border: "1px solid #10B981", boxShadow: "0 15px 35px rgba(16,185,129,0.08)", borderRadius: "1rem", padding: "1.5rem" }}>
+                  <div style={{ background: "rgba(16, 185, 129, 0.03)", border: "1px solid #10B981", boxShadow: "0 15px 35px rgba(16,185,129,0.08)", borderRadius: "1rem", padding: "1.5rem", position: "relative" }}>
+                    <div style={{ position: "absolute", top: "-10px", right: "10px", background: "#10B981", color: "#030712", fontSize: "0.65rem", fontWeight: 900, padding: "2px 8px", borderRadius: "4px", boxShadow: "0 0 10px rgba(16,185,129,0.5)" }} className="animate-pulse">
+                      SEMANA 11 (ACTUAL)
+                    </div>
                     <h3 style={{ color: "#fafaf9", fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.75rem 0" }}>DESARROLLO (W4 - W12)</h3>
                     <div style={{ display: "inline-block", background: "rgba(16,185,129,0.12)", color: "#10B981", border: "1px solid rgba(16,185,129,0.3)", padding: "0.25rem 0.5rem", borderRadius: "0.5rem", fontSize: "0.7rem", fontWeight: 800, marginBottom: "1rem" }}>
                       ★ HITO 1 (W4): Flujo Core
@@ -120,7 +123,7 @@ export default function MethodologyPage() {
                   </div>
 
                   <div style={{ background: "rgba(15, 23, 42, 0.35)", border: "1px solid rgba(255, 255, 255, 0.05)", borderRadius: "1rem", padding: "1.5rem" }}>
-                    <h3 style={{ color: "#fafaf9", fontSize: "1.1rem", fontWeight: 800, marginBottom: "0.75rem" }}>CIERRE (W13 - W16)</h3>
+                    <h3 style={{ color: "#fafaf9", fontSize: "1.1rem", fontWeight: 800, marginBottom: "0.75rem" }}>CIERRE (W13 - W18)</h3>
                     <ul style={{ color: "#94a3b8", fontSize: "0.95rem", lineHeight: 1.5, paddingLeft: "1.2rem", margin: 0 }}>
                       <li style={{ marginBottom: "0.5rem" }}>QA & Stress</li>
                       <li style={{ marginBottom: "0.5rem" }}>Hardening (RLS)</li>
@@ -152,7 +155,7 @@ export default function MethodologyPage() {
                 <div style={{ background: "rgba(15, 23, 42, 0.35)", border: "1px solid rgba(255, 255, 255, 0.05)", borderRadius: "1rem", overflow: "hidden", marginTop: "1rem" }}>
                   <div style={{ padding: "1rem", borderBottom: "1px solid rgba(255, 255, 255, 0.05)", display: "flex", alignItems: "center", gap: "0.5rem" }}>
                     <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#10b981" }} />
-                    <span style={{ color: "#94a3b8", fontSize: "0.8rem", fontWeight: 600 }}>Gantt DUOC · Roadmap 16 Semanas · Tiempo Real</span>
+                    <span style={{ color: "#94a3b8", fontSize: "0.8rem", fontWeight: 600 }}>Gantt DUOC · Roadmap 18 Semanas · Tiempo Real</span>
                   </div>
                   
                   <img 
@@ -302,7 +305,7 @@ export default function MethodologyPage() {
                     "Digitalizando el sabor, automatizando el éxito."
                   </h3>
                   <p style={{ color: "#94a3b8", fontSize: "0.95rem", margin: 0, lineHeight: 1.5 }}>
-                    La metodología Ágil y el stack son la respuesta proporcional al plazo hermético de 16 semanas.
+                    La metodología Ágil y el stack son la respuesta proporcional al plazo hermético de 18 semanas.
                   </p>
                 </div>
               </div>

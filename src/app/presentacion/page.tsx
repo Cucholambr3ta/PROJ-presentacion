@@ -260,7 +260,7 @@ USING (
                 icon: Calendar,
                 title: "Gestión & Metodología",
                 tag: "GARANTÍA DE VALOR",
-                desc: "Orquestamos un desarrollo iterativo ágil bajo un Roadmap de 16 semanas. La elección de SCRUM permite despachar entregas funcionales continuas y validar el flujo operativo core completo (Hito 1 - Semana 4) en condiciones de producción real."
+                desc: "Orquestamos un desarrollo iterativo ágil bajo un Roadmap de 18 semanas. La elección de SCRUM permite despachar entregas funcionales continuas y validar el flujo operativo core completo (Hito 1 - Semana 4) en condiciones de producción real."
               }
             ].map((pilar, idx) => (
               <div 
@@ -747,23 +747,37 @@ USING (
         <section className="w-full mb-36 space-y-16">
           <div className="flex flex-col items-center gap-2">
             <h2 className="text-xs font-black uppercase tracking-[0.4em] text-slate-400">C I C L O   D E   E N T R E G A</h2>
-            <p className="text-3xl font-black tracking-tight text-white">Cronograma de Desarrollo (16 Semanas)</p>
+            <p className="text-3xl font-black tracking-tight text-white">Cronograma de Desarrollo (18 Semanas)</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
             {[
               { icon: Layers, title: "Inicio (W1 - W3)", tag: "FASE 1: CONFIGURACIÓN", desc: "Elaboración del SAD, contratos de Base de Datos y diseño modular del Design System." },
-              { icon: Zap, title: "Desarrollo (W4 - W12)", tag: "FASE 2: CONSTRUCCIÓN", desc: "Hito 1 (W4) con el flujo operativo core completamente funcional y paralelización de flujos." },
-              { icon: Star, title: "QA & Cierre (W13 - W16)", tag: "FASE 3: CERTIFICACIÓN", desc: "Pruebas de estrés concurrentes, endurecimiento RLS y despliegue final a producción." }
+              { icon: Zap, title: "Desarrollo (W4 - W12)", tag: "FASE 2: CONSTRUCCIÓN", desc: "Hito 1 (W4) con el flujo operativo core completamente funcional y paralelización de flujos.", current: "Semana 11" },
+              { icon: Star, title: "QA & Cierre (W13 - W18)", tag: "FASE 3: CERTIFICACIÓN", desc: "Pruebas de estrés concurrentes, endurecimiento RLS y despliegue final a producción." }
             ].map((step, idx) => (
               <div 
                 key={idx} 
-                className="group relative pt-14 pb-8 px-6 bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] text-center hover:border-emerald-500/30 transition-all duration-500 hover:-translate-y-1 flex flex-col items-center justify-between min-h-[250px]"
+                className={`group relative pt-14 pb-8 px-6 bg-slate-950/40 backdrop-blur-xl border rounded-[2.5rem] text-center transition-all duration-500 hover:-translate-y-1 flex flex-col items-center justify-between min-h-[250px] ${
+                  step.current 
+                    ? "border-emerald-500/40 shadow-[0_0_20px_rgba(16,185,129,0.1)]" 
+                    : "border-white/10 hover:border-emerald-500/30"
+                }`}
               >
                 {/* Floating Badge Icon */}
-                <div className="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-slate-950 border border-white/10 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/5 group-hover:border-emerald-500/30 group-hover:scale-110 transition-all duration-500 z-20">
+                <div className={`absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-slate-950 border rounded-full flex items-center justify-center shadow-lg transition-all duration-500 z-20 ${
+                  step.current 
+                    ? "border-emerald-500 shadow-emerald-500/10 scale-110" 
+                    : "border-white/10 group-hover:border-emerald-500/30 group-hover:scale-110"
+                }`}>
                   <step.icon className="w-6 h-6 text-emerald-500" />
                 </div>
+
+                {step.current && (
+                  <div className="absolute top-4 right-4 px-2 py-0.5 bg-emerald-500 text-slate-950 text-[9px] font-black uppercase rounded-md tracking-wider animate-pulse">
+                    {step.current} (Actual)
+                  </div>
+                )}
 
                 <div className="space-y-3 mt-2">
                   <div className="inline-flex px-2.5 py-0.5 bg-slate-950/80 border border-white/10 rounded-full text-[8px] font-black uppercase tracking-wider text-emerald-400/80">

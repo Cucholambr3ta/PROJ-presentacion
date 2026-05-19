@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { 
-  QrCode, 
-  Utensils, 
-  Zap, 
-  Star, 
-  ArrowRight, 
-  Store, 
+import {
+  QrCode,
+  Utensils,
+  Zap,
+  Star,
+  ArrowRight,
+  Store,
   Compass,
   Cpu,
   Calendar,
@@ -182,7 +182,7 @@ USING (
 
   return (
     <div className="min-h-screen bg-[#030712] text-slate-100 flex flex-col font-sans selection:bg-emerald-500/30 selection:text-emerald-200 relative overflow-x-hidden">
-      
+
       {/* Viewport Cyber-Sleek Neon Border */}
       <div className="fixed inset-0 border-[6px] md:border-[12px] border-slate-950 pointer-events-none z-50" />
       <div className="fixed inset-2 md:inset-4 border border-emerald-500/10 pointer-events-none z-50 rounded-2xl shadow-[inset_0_0_30px_rgba(16,185,129,0.06),_0_0_20px_rgba(16,185,129,0.04)]" />
@@ -213,7 +213,7 @@ USING (
 
       {/* Hero Section */}
       <main className="relative z-30 flex-1 flex flex-col items-center justify-center px-6 pt-12 pb-24 text-center max-w-6xl mx-auto w-full">
-        
+
         {/* Top badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-[10px] font-black uppercase tracking-[0.2em] mb-10 animate-bounce">
           <Star className="w-3 h-3 fill-current" />
@@ -260,11 +260,11 @@ USING (
                 icon: Calendar,
                 title: "Gestión & Metodología",
                 tag: "GARANTÍA DE VALOR",
-                desc: "Orquestamos un desarrollo iterativo ágil bajo un Roadmap de 16 semanas. La elección de SCRUM permite despachar entregas funcionales continuas y validar el flujo operativo core completo (Hito 1 - Semana 4) en condiciones de producción real."
+                desc: "Orquestamos un desarrollo iterativo ágil bajo un Roadmap de 18 semanas. La elección de SCRUM permite despachar entregas funcionales continuas y validar el flujo operativo core completo (Hito 1 - Semana 4) en condiciones de producción real."
               }
             ].map((pilar, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="group relative pt-14 pb-8 px-8 md:px-12 bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] text-left transition-all duration-500 hover:bg-slate-950/60 hover:-translate-y-1 hover:border-emerald-500/20 w-full"
               >
                 {/* Floating Badge Icon */}
@@ -303,7 +303,7 @@ USING (
 
             {/* Grid layout for tabs and details */}
             <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8">
-              
+
               {/* App List Tabs */}
               <div className="space-y-2 max-h-[420px] overflow-y-auto pr-2 custom-scrollbar">
                 <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest px-3 mb-2">Aplicaciones (apps/)</div>
@@ -311,16 +311,14 @@ USING (
                   <button
                     key={item.name}
                     onClick={() => setActiveApp(item.name)}
-                    className={`w-full text-left px-4 py-3 rounded-2xl border text-xs font-black tracking-wide transition-all flex items-center justify-between group ${
-                      activeApp === item.name
+                    className={`w-full text-left px-4 py-3 rounded-2xl border text-xs font-black tracking-wide transition-all flex items-center justify-between group ${activeApp === item.name
                         ? "bg-emerald-500/10 border-emerald-500/30 text-white"
                         : "bg-slate-950/40 border-white/5 text-slate-400 hover:bg-white/5 hover:text-white"
-                    }`}
+                      }`}
                   >
                     <span>{item.name}</span>
-                    <span className={`text-[9px] px-2 py-0.5 rounded-md font-mono uppercase ${
-                      activeApp === item.name ? "bg-emerald-500 text-slate-950" : "bg-white/5 text-slate-500"
-                    }`}>
+                    <span className={`text-[9px] px-2 py-0.5 rounded-md font-mono uppercase ${activeApp === item.name ? "bg-emerald-500 text-slate-950" : "bg-white/5 text-slate-500"
+                      }`}>
                       {item.role}
                     </span>
                   </button>
@@ -331,11 +329,10 @@ USING (
                   <button
                     key={item.name}
                     onClick={() => setActiveApp(item.name)}
-                    className={`w-full text-left px-4 py-3 rounded-2xl border text-xs font-black tracking-wide transition-all flex items-center justify-between group ${
-                      activeApp === item.name
+                    className={`w-full text-left px-4 py-3 rounded-2xl border text-xs font-black tracking-wide transition-all flex items-center justify-between group ${activeApp === item.name
                         ? "bg-emerald-500/10 border-emerald-500/30 text-white"
                         : "bg-slate-950/40 border-white/5 text-slate-400 hover:bg-white/5 hover:text-white"
-                    }`}
+                      }`}
                   >
                     <span className="font-mono text-[11px]">{item.name}</span>
                     <span className="text-[8px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-mono uppercase">
@@ -348,7 +345,7 @@ USING (
               {/* Dynamic Details Panel */}
               <div className="bg-slate-950/50 border border-white/5 rounded-3xl p-6 md:p-8 flex flex-col justify-between relative overflow-hidden min-h-[380px]">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
-                
+
                 <div>
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6 mb-6">
                     <div>
@@ -357,11 +354,11 @@ USING (
                       </div>
                       <h4 className="text-2xl md:text-3xl font-black text-white">{monorepoData[activeApp as keyof typeof monorepoData].name}</h4>
                     </div>
-                    
+
                     <div className="text-left md:text-right">
                       <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest block">Usuario / Puerto</span>
                       <span className="text-lg font-black text-emerald-500">
-                        {monorepoData[activeApp as keyof typeof monorepoData].role} 
+                        {monorepoData[activeApp as keyof typeof monorepoData].role}
                         {monorepoData[activeApp as keyof typeof monorepoData].port !== "Package" && ` (Port :${monorepoData[activeApp as keyof typeof monorepoData].port})`}
                       </span>
                     </div>
@@ -413,7 +410,7 @@ USING (
             <div className="absolute top-[-10%] right-[-10%] w-[30%] h-[30%] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10">
-              
+
               {/* Left Column: Interactive Simulation */}
               <div className="space-y-8">
                 <div className="space-y-2">
@@ -438,16 +435,14 @@ USING (
                   <ChevronRight className="w-4 h-4 text-slate-600" />
                   <div className="text-center">
                     <span className="text-[9px] font-black text-slate-500 uppercase block mb-1">KDS Cocina</span>
-                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center text-xs font-black mx-auto transition-all ${
-                      simKitchenReady ? "bg-amber-500/20 border-amber-500 text-amber-400" : "bg-slate-900 border-white/10 text-slate-600"
-                    }`}>KDS</div>
+                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center text-xs font-black mx-auto transition-all ${simKitchenReady ? "bg-amber-500/20 border-amber-500 text-amber-400" : "bg-slate-900 border-white/10 text-slate-600"
+                      }`}>KDS</div>
                   </div>
                   <ChevronRight className="w-4 h-4 text-slate-600" />
                   <div className="text-center">
                     <span className="text-[9px] font-black text-slate-500 uppercase block mb-1">KDS Barra</span>
-                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center text-xs font-black mx-auto transition-all ${
-                      simBarReady ? "bg-purple-500/20 border-purple-500 text-purple-400" : "bg-slate-900 border-white/10 text-slate-600"
-                    }`}>BAR</div>
+                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center text-xs font-black mx-auto transition-all ${simBarReady ? "bg-purple-500/20 border-purple-500 text-purple-400" : "bg-slate-900 border-white/10 text-slate-600"
+                      }`}>BAR</div>
                   </div>
                 </div>
 
@@ -458,7 +453,7 @@ USING (
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
                       Status: {simKitchenReady && simBarReady ? "READY" : (simKitchenReady || simBarReady ? "PREPARING" : "PENDING")}
                     </span>
-                    <button 
+                    <button
                       onClick={() => {
                         setSimKitchenReady(false);
                         setSimBarReady(false);
@@ -482,30 +477,30 @@ USING (
                   {/* Simulator steps triggers */}
                   <div className="flex gap-2">
                     {simStep === 0 && (
-                      <button 
-                        onClick={() => setSimStep(1)} 
+                      <button
+                        onClick={() => setSimStep(1)}
                         className="px-4 py-2 bg-emerald-500 text-slate-950 font-black rounded-lg text-xs uppercase tracking-wider flex items-center gap-1 hover:scale-105 active:scale-95 transition-all"
                       >
                         <Play className="w-3.5 h-3.5 fill-current" /> Crear Pedido Mixto
                       </button>
                     )}
                     {simStep === 1 && (
-                      <button 
+                      <button
                         onClick={() => {
                           setSimBarReady(true);
                           setSimStep(2);
-                        }} 
+                        }}
                         className="px-4 py-2 bg-purple-500 text-white font-black rounded-lg text-xs uppercase tracking-wider flex items-center gap-1 hover:scale-105 active:scale-95 transition-all"
                       >
                         Despachar Bebida en Barra
                       </button>
                     )}
                     {simStep === 2 && (
-                      <button 
+                      <button
                         onClick={() => {
                           setSimKitchenReady(true);
                           setSimStep(3);
-                        }} 
+                        }}
                         className="px-4 py-2 bg-amber-500 text-slate-950 font-black rounded-lg text-xs uppercase tracking-wider flex items-center gap-1 hover:scale-105 active:scale-95 transition-all"
                       >
                         Despachar Alimento en Cocina
@@ -524,7 +519,7 @@ USING (
               <div className="bg-slate-950/50 border border-white/5 rounded-3xl p-6 flex flex-col justify-between">
                 <div className="space-y-6">
                   <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Base de Datos (Tabla Orders)</div>
-                  
+
                   <div className="space-y-4">
                     <div className="border-b border-white/5 pb-3">
                       <div className="flex items-center justify-between text-xs mb-1">
@@ -578,24 +573,22 @@ USING (
 
           <div className="max-w-5xl mx-auto w-full bg-slate-950/30 backdrop-blur-xl border border-white/10 rounded-[3rem] p-6 md:p-10 text-left">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8">
-              
+
               {/* Layers tab triggers */}
               <div className="space-y-3">
                 <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest px-3 mb-2">Capas de Protección</div>
-                
+
                 {securityLayers.map((layer) => (
                   <button
                     key={layer.num}
                     onClick={() => setActiveSecurityLayer(layer.num)}
-                    className={`w-full text-left px-4 py-3.5 rounded-2xl border text-xs font-black tracking-wide transition-all flex items-center gap-3 ${
-                      activeSecurityLayer === layer.num
+                    className={`w-full text-left px-4 py-3.5 rounded-2xl border text-xs font-black tracking-wide transition-all flex items-center gap-3 ${activeSecurityLayer === layer.num
                         ? "bg-emerald-500/10 border-emerald-500/30 text-white"
                         : "bg-slate-950/40 border-white/5 text-slate-400 hover:bg-white/5 hover:text-white"
-                    }`}
+                      }`}
                   >
-                    <span className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-mono ${
-                      activeSecurityLayer === layer.num ? "bg-emerald-500 text-slate-950 font-black" : "bg-slate-800 text-slate-500"
-                    }`}>
+                    <span className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-mono ${activeSecurityLayer === layer.num ? "bg-emerald-500 text-slate-950 font-black" : "bg-slate-800 text-slate-500"
+                      }`}>
                       L{layer.num}
                     </span>
                     <span>{layer.name.split(": ")[1]}</span>
@@ -667,8 +660,8 @@ USING (
                 desc: "Operamos bajo un esquema estricto de GitFlow. La rama `develop` sirve para integrar cambios y desplegar automáticamente entornos efímeros de testeo en Vercel para validación. La rama `main` queda bloqueada y protegida, actualizándose solo tras certificar la estabilidad en preproducción."
               }
             ].map((pilar, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="group relative pt-14 pb-8 px-8 md:px-12 bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] text-left transition-all duration-500 hover:bg-slate-950/60 hover:-translate-y-1 hover:border-emerald-500/20 w-full"
               >
                 {/* Floating Badge Icon */}
@@ -701,7 +694,7 @@ USING (
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full text-left">
-            
+
             {/* Sw.js KDS */}
             <div className="bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-10 hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
@@ -747,23 +740,35 @@ USING (
         <section className="w-full mb-36 space-y-16">
           <div className="flex flex-col items-center gap-2">
             <h2 className="text-xs font-black uppercase tracking-[0.4em] text-slate-400">C I C L O   D E   E N T R E G A</h2>
-            <p className="text-3xl font-black tracking-tight text-white">Cronograma de Desarrollo (16 Semanas)</p>
+            <p className="text-3xl font-black tracking-tight text-white">Cronograma de Desarrollo (18 Semanas)</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
             {[
               { icon: Layers, title: "Inicio (W1 - W3)", tag: "FASE 1: CONFIGURACIÓN", desc: "Elaboración del SAD, contratos de Base de Datos y diseño modular del Design System." },
-              { icon: Zap, title: "Desarrollo (W4 - W12)", tag: "FASE 2: CONSTRUCCIÓN", desc: "Hito 1 (W4) con el flujo operativo core completamente funcional y paralelización de flujos." },
-              { icon: Star, title: "QA & Cierre (W13 - W16)", tag: "FASE 3: CERTIFICACIÓN", desc: "Pruebas de estrés concurrentes, endurecimiento RLS y despliegue final a producción." }
+              { icon: Zap, title: "Desarrollo (W4 - W12)", tag: "FASE 2: CONSTRUCCIÓN", desc: "Hito 1 (W4) con el flujo operativo core completamente funcional y paralelización de flujos.", current: "Semana 11" },
+              { icon: Star, title: "QA & Cierre (W13 - W18)", tag: "FASE 3: CERTIFICACIÓN", desc: "Pruebas de estrés concurrentes, endurecimiento RLS y despliegue final a producción." }
             ].map((step, idx) => (
-              <div 
-                key={idx} 
-                className="group relative pt-14 pb-8 px-6 bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] text-center hover:border-emerald-500/30 transition-all duration-500 hover:-translate-y-1 flex flex-col items-center justify-between min-h-[250px]"
+              <div
+                key={idx}
+                className={`group relative pt-14 pb-8 px-6 bg-slate-950/40 backdrop-blur-xl border rounded-[2.5rem] text-center transition-all duration-500 hover:-translate-y-1 flex flex-col items-center justify-between min-h-[250px] ${step.current
+                    ? "border-emerald-500/40 shadow-[0_0_20px_rgba(16,185,129,0.1)]"
+                    : "border-white/10 hover:border-emerald-500/30"
+                  }`}
               >
                 {/* Floating Badge Icon */}
-                <div className="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-slate-950 border border-white/10 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/5 group-hover:border-emerald-500/30 group-hover:scale-110 transition-all duration-500 z-20">
+                <div className={`absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-slate-950 border rounded-full flex items-center justify-center shadow-lg transition-all duration-500 z-20 ${step.current
+                    ? "border-emerald-500 shadow-emerald-500/10 scale-110"
+                    : "border-white/10 group-hover:border-emerald-500/30 group-hover:scale-110"
+                  }`}>
                   <step.icon className="w-6 h-6 text-emerald-500" />
                 </div>
+
+                {step.current && (
+                  <div className="absolute top-4 right-4 px-2 py-0.5 bg-emerald-500 text-slate-950 text-[9px] font-black uppercase rounded-md tracking-wider animate-pulse">
+                    {step.current} (Actual)
+                  </div>
+                )}
 
                 <div className="space-y-3 mt-2">
                   <div className="inline-flex px-2.5 py-0.5 bg-slate-950/80 border border-white/10 rounded-full text-[8px] font-black uppercase tracking-wider text-emerald-400/80">
@@ -782,11 +787,11 @@ USING (
           <div className="relative w-full max-w-3xl group cursor-default">
             <div className="absolute inset-0 bg-emerald-500 blur-3xl opacity-5 pointer-events-none" />
             <div className="relative flex flex-col items-center gap-10 p-8 md:p-12 bg-gradient-to-b from-slate-950 to-[#020617] border border-white/10 rounded-[3rem] shadow-2xl">
-              
+
               <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center shadow-xl">
                 <Users className="w-8 h-8 text-emerald-500" />
               </div>
-              
+
               <div className="space-y-2 w-full text-center">
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white">Equipo de Desarrollo</h2>
                 <p className="text-sm text-slate-400">Asignación de Roles por Objetivo para eliminar dependencias técnicas</p>
@@ -871,7 +876,7 @@ USING (
             </span>
           </div>
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
-            © 2026 GASTRO ANALYTICS 360 · ALL RIGHTS RESERVED
+            © 2026 menubites · ALL RIGHTS RESERVED
           </p>
         </div>
       </footer>
