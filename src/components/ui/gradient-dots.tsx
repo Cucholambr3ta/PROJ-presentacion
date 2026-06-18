@@ -38,10 +38,10 @@ export function GradientDots({
         backgroundImage: `
           radial-gradient(circle at 50% 50%, transparent 1.5px, ${dotColor} 0 ${dotSize}px, transparent ${dotSize}px),
           radial-gradient(circle at 50% 50%, transparent 1.5px, ${dotColor} 0 ${dotSize}px, transparent ${dotSize}px),
-          radial-gradient(circle at 50% 50%, #C2440A, transparent 60%),
-          radial-gradient(circle at 50% 50%, #EA6F38, transparent 60%),
-          radial-gradient(circle at 50% 50%, #B07040, transparent 60%),
-          radial-gradient(ellipse at 50% 50%, #2C1A0E, transparent 60%)
+          radial-gradient(circle at 50% 50%, #10B981, transparent 60%),
+          radial-gradient(circle at 50% 50%, #0d9488, transparent 60%),
+          radial-gradient(circle at 50% 50%, #74a387, transparent 60%),
+          radial-gradient(ellipse at 50% 50%, #041b12, transparent 60%)
         `,
         backgroundSize: `
           ${spacing}px ${hexSpacing}px,
@@ -57,25 +57,6 @@ export function GradientDots({
           0% 0%,
           0% 0px
         `,
-      }}
-      animate={{
-        backgroundPosition: [
-          `0px 0px, ${spacing / 2}px ${hexSpacing / 2}px, 800% 400%, 1000% -400%, -1200% -600%, 400% ${hexSpacing}px`,
-          `0px 0px, ${spacing / 2}px ${hexSpacing / 2}px, 0% 0%, 0% 0%, 0% 0%, 0% 0%`,
-        ],
-        filter: ["hue-rotate(0deg)", "hue-rotate(20deg)"], // Reduced hue range to stay in warm colors
-      }}
-      transition={{
-        backgroundPosition: {
-          duration: duration,
-          ease: "linear",
-          repeat: Number.POSITIVE_INFINITY,
-        },
-        filter: {
-          duration: colorCycleDuration,
-          ease: "linear",
-          repeat: Number.POSITIVE_INFINITY,
-        },
       }}
       {...props}
     />

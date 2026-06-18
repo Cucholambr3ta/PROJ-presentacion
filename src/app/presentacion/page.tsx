@@ -205,6 +205,13 @@ USING (
         </div>
 
         <div className="flex items-center gap-4">
+          <button
+            onClick={() => router.push("/presentacion/pruebas")}
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-lg text-[10px] font-black uppercase tracking-wider text-emerald-400 hover:bg-emerald-500/20 hover:scale-105 transition-all"
+          >
+            <ShieldCheck className="w-3.5 h-3.5" />
+            Pruebas & Calidad (EP3)
+          </button>
           <span className="hidden md:inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[9px] font-black uppercase tracking-wider text-slate-400">
             Presentación v2.4.0
           </span>
