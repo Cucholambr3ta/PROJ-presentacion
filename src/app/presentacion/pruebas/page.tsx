@@ -85,7 +85,7 @@ const MEJORAS = [
   {
     prio: "ALTA",
     hallazgo: "POST /api/orders ejecuta hasta 8 operaciones secuenciales sin transacción (riesgo de pedido huérfano + 200–400 ms en cloud)",
-    mejora: "Función RPC en Postgres (plpgsql, SECURITY DEFINER): 8 viajes → 1, operación atómica todo-o-nada",
+    mejora: "Función RPC (Remote Procedure Call) en Postgres (plpgsql, SECURITY DEFINER): 8 viajes → 1, operación atómica todo-o-nada",
     estandar: "Corrección · Seguridad",
   },
   {
@@ -336,7 +336,7 @@ export default function PruebasPage() {
                   </div>
                   <div style={innerCard}>
                     <h4 style={{ margin: "0 0 0.5rem 0", color: INNER_ACCENT, fontWeight: 800, fontSize: "0.95rem" }}>Costo oculto en Cloud</h4>
-                    <p style={{ margin: 0, fontSize: "0.86rem", color: INNER_BODY, lineHeight: 1.55 }}>Local cada viaje cuesta ~0.5 ms (imperceptible). En producción 20–50 ms por viaje → piso de 200–400 ms por pedido. Invisible en el baseline local.</p>
+                    <p style={{ margin: 0, fontSize: "0.86rem", color: INNER_BODY, lineHeight: 1.55 }}>Local cada viaje cuesta ~0.5 ms (imperceptible). En producción 20–50 ms por viaje → piso de 200–400 ms por pedido.</p>
                   </div>
                 </div>
               </div>
@@ -387,8 +387,7 @@ export default function PruebasPage() {
                 <div style={innerCard}>
                   <h4 style={{ margin: "0 0 0.75rem 0", color: INNER_ACCENT, fontWeight: 800, fontSize: "0.95rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>Lecciones aprendidas</h4>
                   <ul style={{ margin: 0, paddingLeft: "1.2rem", color: INNER_BODY, fontSize: "0.92rem", lineHeight: 1.7 }}>
-                    <li>El baseline <strong style={{ color: INNER_HEADING }}>local no refleja</strong> la latencia de red real en la nube; medir contra build de producción.</li>
-                    <li>La <strong style={{ color: INNER_HEADING }}>transaccionalidad</strong> es tan importante como la velocidad: una RPC atómica resuelve ambos.</li>
+                    <li>La <strong style={{ color: INNER_HEADING }}>transaccionalidad</strong> es tan importante como la velocidad: una RPC (Remote Procedure Call) atómica resuelve ambos.</li>
                     <li>Un SAST limpio (0 hallazgos) <strong style={{ color: INNER_HEADING }}>no garantiza</strong> ausencia total de fallos; la seguridad real vive en RLS y dependencias.</li>
                     <li>Evitar la <strong style={{ color: INNER_HEADING }}>optimización prematura</strong>: medir primero, priorizar por impacto después.</li>
                   </ul>
