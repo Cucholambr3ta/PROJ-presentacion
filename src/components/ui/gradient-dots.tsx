@@ -38,10 +38,10 @@ export function GradientDots({
         backgroundImage: `
           radial-gradient(circle at 50% 50%, transparent 1.5px, ${dotColor} 0 ${dotSize}px, transparent ${dotSize}px),
           radial-gradient(circle at 50% 50%, transparent 1.5px, ${dotColor} 0 ${dotSize}px, transparent ${dotSize}px),
-          radial-gradient(circle at 50% 50%, #10B981, transparent 60%),
-          radial-gradient(circle at 50% 50%, #0d9488, transparent 60%),
-          radial-gradient(circle at 50% 50%, #74a387, transparent 60%),
-          radial-gradient(ellipse at 50% 50%, #041b12, transparent 60%)
+          radial-gradient(circle at 50% 50%, #064e3b, transparent 60%),
+          radial-gradient(circle at 50% 50%, #0f5a52, transparent 60%),
+          radial-gradient(circle at 50% 50%, #2c4f3f, transparent 60%),
+          radial-gradient(ellipse at 50% 50%, #02110b, transparent 60%)
         `,
         backgroundSize: `
           ${spacing}px ${hexSpacing}px,

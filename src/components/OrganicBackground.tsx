@@ -14,7 +14,7 @@ export function OrganicBackground() {
         position: "absolute", top: "-10%", left: "-10%",
         width: "60vw", height: "60vw", maxWidth: 600, maxHeight: 600,
         borderRadius: "50%",
-        background: "radial-gradient(circle, rgba(16,185,129,0.07) 0%, transparent 70%)",
+        background: "radial-gradient(circle, rgba(6,78,59,0.10) 0%, transparent 70%)",
         animation: "blobC 25s ease-in-out infinite alternate",
       }} />
 
@@ -33,7 +33,7 @@ export function OrganicBackground() {
           dotSize={4} 
           spacing={32}
           duration={25}
-          dotColor="rgba(16, 185, 129, 0.22)"
+          dotColor="rgba(6, 95, 70, 0.28)"
           backgroundColor="transparent"
         />
       </div>
