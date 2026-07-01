@@ -212,7 +212,7 @@ USING (
       </nav>
 
       {/* Hero Section */}
-      <main className="relative z-30 flex-1 flex flex-col items-center justify-center px-6 pt-12 pb-24 text-center max-w-6xl mx-auto w-full">
+      <main className="relative z-30 flex-1 flex flex-col items-center justify-center px-6 pt-12 pb-24 text-center max-w-7xl mx-auto w-full">
 
         {/* Top badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-[10px] font-black uppercase tracking-[0.2em] mb-10 animate-bounce">
@@ -242,7 +242,7 @@ USING (
           </div>
 
           {/* Optimized Anti-Collision Grid Cards */}
-          <div className="grid grid-cols-1 gap-10 max-w-5xl mx-auto w-full">
+          <div className="grid grid-cols-1 gap-10 max-w-7xl mx-auto w-full">
             {[
               {
                 icon: Compass,
@@ -296,7 +296,7 @@ USING (
             <p className="text-3xl font-black tracking-tight text-white">Explorador del Monorepo Turborepo</p>
           </div>
 
-          <div className="max-w-5xl mx-auto w-full bg-slate-950/30 backdrop-blur-xl border border-white/10 rounded-[3rem] p-6 md:p-10 text-left relative">
+          <div className="max-w-7xl mx-auto w-full bg-slate-950/30 backdrop-blur-xl border border-white/10 rounded-[3rem] p-6 md:p-10 text-left relative">
             <div className="absolute top-6 right-8 hidden md:flex items-center gap-1.5 text-xs text-slate-500">
               <Terminal className="w-3.5 h-3.5 text-emerald-500 animate-pulse" /> npm workspaces active
             </div>
@@ -406,7 +406,7 @@ USING (
             <p className="text-3xl font-black tracking-tight text-white">Enrutamiento Realtime Dual-Estación (v2.4.0)</p>
           </div>
 
-          <div className="max-w-5xl mx-auto w-full bg-slate-950/30 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-12 text-left relative overflow-hidden">
+          <div className="max-w-7xl mx-auto w-full bg-slate-950/30 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-12 text-left relative overflow-hidden">
             <div className="absolute top-[-10%] right-[-10%] w-[30%] h-[30%] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10">
@@ -422,7 +422,7 @@ USING (
                 </div>
 
                 {/* Simulation Pipeline States */}
-                <div className="flex items-center justify-between border-t border-b border-white/10 py-6 max-w-lg">
+                <div className="flex items-center justify-between border-t border-b border-white/10 py-6 max-w-2xl">
                   <div className="text-center">
                     <span className="text-[9px] font-black text-slate-500 uppercase block mb-1">Mesa Cliente</span>
                     <div className="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500 flex items-center justify-center text-xs font-black text-emerald-400 mx-auto">M2</div>
@@ -447,7 +447,7 @@ USING (
                 </div>
 
                 {/* Simulator Action Console */}
-                <div className="bg-slate-950/70 border border-white/5 rounded-2xl p-6 space-y-4 max-w-lg">
+                <div className="bg-slate-950/70 border border-white/5 rounded-2xl p-6 space-y-4 max-w-2xl">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs text-slate-400 flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
@@ -571,7 +571,7 @@ USING (
             <p className="text-3xl font-black tracking-tight text-white">Modelo de Seguridad en Profundidad (RBAC & RLS)</p>
           </div>
 
-          <div className="max-w-5xl mx-auto w-full bg-slate-950/30 backdrop-blur-xl border border-white/10 rounded-[3rem] p-6 md:p-10 text-left">
+          <div className="max-w-7xl mx-auto w-full bg-slate-950/30 backdrop-blur-xl border border-white/10 rounded-[3rem] p-6 md:p-10 text-left">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8">
 
               {/* Layers tab triggers */}
@@ -639,7 +639,7 @@ USING (
             <p className="text-3xl font-black tracking-tight text-white">Servicios Cloud & Calidad de Código</p>
           </div>
 
-          <div className="grid grid-cols-1 gap-10 max-w-5xl mx-auto w-full">
+          <div className="grid grid-cols-1 gap-10 max-w-7xl mx-auto w-full">
             {[
               {
                 icon: Cloud,
@@ -693,7 +693,7 @@ USING (
             <p className="text-3xl font-black tracking-tight text-white">Service Workers & Notificaciones Web Push</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto w-full text-left">
 
             {/* Sw.js KDS */}
             <div className="bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-10 hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between">
@@ -743,7 +743,7 @@ USING (
             <p className="text-3xl font-black tracking-tight text-white">Cronograma de Desarrollo (18 Semanas)</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto w-full">
             {[
               { icon: Layers, title: "Inicio (W1 - W3)", tag: "FASE 1: CONFIGURACIÓN", desc: "Elaboración del SAD, contratos de Base de Datos y diseño modular del Design System." },
               { icon: Zap, title: "Desarrollo (W4 - W12)", tag: "FASE 2: CONSTRUCCIÓN", desc: "Hito 1 (W4) con el flujo operativo core completamente funcional y paralelización de flujos.", current: "Semana 11" },
@@ -784,7 +784,7 @@ USING (
 
         {/* ── SECCIÓN 8: INTEGRANTES & FILOSOFÍA ── */}
         <section className="w-full mb-12 flex justify-center">
-          <div className="relative w-full max-w-3xl group cursor-default">
+          <div className="relative w-full max-w-7xl group cursor-default">
             <div className="absolute inset-0 bg-emerald-500 blur-3xl opacity-5 pointer-events-none" />
             <div className="relative flex flex-col items-center gap-10 p-8 md:p-12 bg-gradient-to-b from-slate-950 to-[#020617] border border-white/10 rounded-[3rem] shadow-2xl">
 
